@@ -228,7 +228,7 @@
  
         # Send to Profile Page
         Router::redirect('/users/profile'); 
-    }  
-   	
+    } 
+	
 } # end of class 
 

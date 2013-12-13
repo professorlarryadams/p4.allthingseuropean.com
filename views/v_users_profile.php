@@ -6,9 +6,13 @@
 	<div><strong>Email:</strong>
 	<?=$user->email?></div><br />
     
+    <div><strong>Created:</strong>
+	<?=$user->created?></div><br />
+    
+    
     <div class="red"><h3>Please select the view to see your application details</h3></div>
     
-    <div><a href="#">Page 1</a> | <a href="#">Page 2</a> | <a href="#">Uploads</a> | <a href="#">Updates</a></div>
+    <div class="blue"><a href="#">Page 1</a> | <a href="#">Page 2</a> | <a href="#">Uploads</a> | <a href="#">Updates</a></div>
     
     
   
