@@ -15,7 +15,7 @@ class posts_controller extends base_controller {
 
         # Setup view
         $this->template->content = View::instance('v_posts_form');
-        $this->template->title   = "Application";
+        $this->template->title   = "719B Application";
 
         # Render template
         echo $this->template;
@@ -45,7 +45,7 @@ class posts_controller extends base_controller {
 	   # Passing the arguement to the view
 	   $this->template->content = View::instance('v_posts_form_2');
 	   $this->template->content->record_id = $record_id;
-	   $this->template->title = "Application page 2";
+	   $this->template->title = "719B page 2";
 
         # Render template
         echo $this->template;
@@ -65,21 +65,11 @@ class posts_controller extends base_controller {
 
     	}
 		
-		public function uploads() {
-			
-			$this->template->content = View::instance('v_posts_uploads');
-			$this->template->title = "Uploading Files:";
-			
-			#Render this template
-			echo $this->template;
-			
-		}
-		
 		public function updates() {
 
         # Setup view
         $this->template->content = View::instance('v_posts_updates');
-        $this->template->title   = "Application";
+        $this->template->title   = "Updating Information";
 
         # Render template
         echo $this->template;
@@ -103,9 +93,66 @@ class posts_controller extends base_controller {
         Router::redirect('/users/profile');
 
     	}
-	
 		
+		
+		public function uploads() {
+
+        # Setup view
+        $this->template->content = View::instance('v_posts_uploads');
+        $this->template->title   = "Updating Information";
+
+        # Render template
+        echo $this->template;
+
+    	}
+		
+		public function p_uploads() {
+			
+		# Associate this upload with this user
+        $_POST['user_id']  = $this->user->user_id;
+
+        # Unix timestamp of when this post was created
+        $_POST['created']  = Time::now();
+		
+		unset($_POST['submit']);
+		
+		if(isset($_POST['btnAdd'])) {
+		
+		$myFile = $_FILES['fileField']['name']; // Storing name into variable
+		
+		$newFileName = $anyNum.$myFile;
+		//===New string is concatenated====
+		//===Following Function will check if the File already exists========
+		
+		if (file_exists("upload/".$newFileName))
+		{
+		echo $newFileName." already exists. ";
+		}
+		//======If file already exists in your Folder, It will return zero and Will not take any action===
+		//======Otherwise File will be stored in your given directory and Will store its name in Database===
+		else
+		{
+		
+		$query = "insert into uploads(file_name) values ('$newFileName')";
+		
+		$q = mysql_query($query);
+		
+		copy($_FILES['fileField']['tmp_name'],'upload/'.$newFileName);
+		//===Copy File Into your given Directory,copy(Source,Destination)
+		
+		if($q =0)
+		{
+		//====$res will be greater than 0 only when File is uploaded Successfully====:)
+		echo 'You have Successfulluy Uploaded File';
+		}
+		}
+		}
+			
+			
+		}
 }
+		
+
 			
 			
 			

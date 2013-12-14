@@ -13,65 +13,78 @@
 <!--JS-->
 
 <script src="../js/SpryValidationTextField.js" type="text/javascript"></script>
-<script src="../js/Script/jquery-1.4.4.min.js" type="text/javascript"></script>
+
+<script>
+
+            function _(el) {
+                return document.getElementById(el);
+            }
+
+            function uploadFile() {
+                 var file = _("file1").files[0];
+                alert (file.name+" - "+file.size+" - "+file.type);
+                var formdata = new FormData();
+                formdata.append("file1", file);
+                var ajax = new XMLHttpRequest();
+                ajax.upload.addEventListener("progress", progressHandler, false);
+                ajax.addEventListener("load", completeHandler, false);
+                ajax.addEventListener("error", errorHandler, false);
+                ajax.addEventListener("abort", abortHandler, false);
+                ajax.open("POST", "upload_parser.php");
+                ajax.send("POST","uploads");
+            }
+
+            function progressHandler (event) {
+                _("loaded_n_total").innerHTML = "Uploaded "+event.loaded+" bytes of "+event.total;
+                var percent = (event.loaded / event.total) * 100;
+                _("progressBar").value = Math.round(percent);
+                _("status").innerHTML = Math.round(percent) +"% uploaded... please wait";
+            }
+
+            function completeHandler (event) {
+                _("status").innerHTML = event.target.responseText;
+                _("progressBar").value = 0;
+            }
+
+            function errorHandler (event) {
+                _("status").innerHTML = "Upload Failed";
+            }
+
+            function abortHandler (event) {
+                _("status").innerHTML = "Upload Aborted";
+            }
+
+
+        </script>
+
+
+	
 </head>
 
 <body>
 
 <div class="container">
-
-	<div id="content">
     
-        <form enctype="multipart/form-data" action="/posts/uploads" method="post">
-        
-        	<h1>Uploads</h1>
-        
-         <fieldset>
-         <p><strong>File format:</strong><br /> 
-         (docs, docx, pdf, jpeg, jpg, png, xls)</p><br />
-        
-          <div><strong>Sea Service:</strong></div>
-          <span id="sprytextfield5">
-          <label for="sea_service"></label>
-          <input type="file" name="sea_service" id="sea_service" title="Upload your proof of sea service."><br />
-          <span class="textfieldRequiredMsg">A value is required.</span></span><br />
-          
-<div><strong>TWIC Receipt:</strong></div>
-         <div>
-           <span id="sprytextfield6">
-           <label for="twic_receipt2"></label>
-           <input type="file" name="twic_receipt" id="twic_receipt" title="Upload your proof of a TWIC."><br />
-           <span class="textfieldRequiredMsg">A value is required.</span></span></div><br />
-        
-         <div><b>Conviction Statement:</b></div>
-         <div> 
-           <span id="sprytextfield7">
-           <label for="convictions2"></label>
-           <input type="file" name="convictions" id="convictions" title="Upload your criminal record."><br />
-           <span class="textfieldRequiredMsg">A value is required.</span></span></div><br />
-         
-         <div><b>Course Certificates:</b></div>
-         <div> <span id="sprytextfield8">
-           <label for="certificates2"></label>
-           <input type="file" name="certificates" id="certificates" title="Upload your proof of course completition."><br />
-           <span class="textfieldRequiredMsg">A value is required.</span></span></div><br />
-        
-         </fieldset>
-          
-          <input type="hidden"name="MAX_FILE_SIZE" value="524288">
-          <input type='submit'  value='submit'>
-         
-         </form>
-         
- </div><!-- Content end tag -->
- </div><!-- Container end tag -->
+        <div class="demo">                        
+        <h1>Selecting multiple files for upload</h1>
+		<p>PHP File Uploader allows you to select multiple files and upload them at once.</p>
+        <p>Limit is 10 megabytes per upload!</p>
+		    
+			<form id="form1" name="form1" enctype="multipart/form-data" method="post" action="p_uploads">
+			
+			<input type="file" name="fileField" id="fileField" />
 
-<script type="text/javascript">
-var sprytextfield5 = new Spry.Widget.ValidationTextField("sprytextfield5");
-var sprytextfield6 = new Spry.Widget.ValidationTextField("sprytextfield6");
-var sprytextfield7 = new Spry.Widget.ValidationTextField("sprytextfield7");
-var sprytextfield8 = new Spry.Widget.ValidationTextField("sprytextfield8");
-</script>
+			<input type="submit" name="btnAdd" id="btnAdd" value="Upload" />
+            
+            <progress id="progressBar" value="0" max="100" style="width: 300px;"></progress>
+            <h3 id="status"></h3>
+            <p id="loaded_n_total"></p>
+        
+        	</form>
+			
+   </div>
+   </div>         
+            
 
 </body>
  </html>

@@ -40,6 +40,17 @@
     
     	# Sanitize Data Entry
     	$_POST = DB::instance(DB_NAME)->sanitize($_POST);
+		
+		# Check password requirements
+		$pwd = $_POST['pwd'];
+
+		if (preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $pwd)){
+   		 echo "Your password is strong.";
+		
+			} else {
+    	
+			echo "Your password is not safe.";
+		}
     
     	# Set up Email / Password Query
     	$q = "SELECT * FROM users WHERE email = '".$_POST['email']."'"; 
@@ -51,8 +62,7 @@
     		if(!empty($user_exists)){
     		
     			# Send to Login page
-    			# needs to pass some error message along...
-	    		Router::redirect('/users/login/user-exists');
+	    		Router::redirect('/users/login');
     		}
     		
     		else {
@@ -192,43 +202,6 @@
     } 
 	
 	
-	public function picture($error = NULL) {
-	
-		# Sanitize Data Entry
-    	$_POST = DB::instance(DB_NAME)->sanitize($_POST);
-		
-        # Upload Image
-        if ($_FILES['file']['error'] == 0) {
-            
-            $file = Upload::upload($_FILES, "/uploads/", array('jpg', 'jpeg', 'gif', 'png', 'docs', 'docx', 'pdf', 'xls'), $this->user->user_id);
- 
-            if($file == 'Invalid file type.') {
-                
-                # Error
-                Router::redirect("/users/profile/error"); 
-            }
-            
-            else {
-                
-                # Upload Image
-                $data = Array('file' => $file);
-                DB::instance(DB_NAME)->update('users', $data, 'WHERE user_id = '.$this->user->user_id);
- 
-                # Resize and Save Image
-                $imageObj = new Image($_SERVER['DOCUMENT_ROOT'].'/uploads/'.$file);
-                $imageObj->resize(150,150);
-            }
-        }
-        
-        else {
-        
-            # Error
-            Router::redirect("/users/profile/error");  
-        }
- 
-        # Send to Profile Page
-        Router::redirect('/users/profile'); 
-    } 
 	
 } # end of class 
 
