@@ -19,7 +19,7 @@
         Display a form so users can sign up        
         -------------------------------------------------------------------------------------------------*/
     	
-		 public function signup($error = NULL) {
+		public function signup($error = NULL) {
         
         #Set up the view
         $this->template->content = View::instance('v_users_signup');
@@ -36,66 +36,57 @@
     	Process the sign up form
     	-------------------------------------------------------------------------------------------------*/
 		
-		public function p_signup() {
-    
-    	# Sanitize Data Entry
-    	$_POST = DB::instance(DB_NAME)->sanitize($_POST);
-		
-		# Check password requirements
-		$pwd = $_POST['pwd'];
-
-		if (preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W).*$#", $pwd)){
-   		 echo "Your password is strong.";
-		
-			} else {
-    	
-			echo "Your password is not safe.";
-		}
-    
-    	# Set up Email / Password Query
-    	$q = "SELECT * FROM users WHERE email = '".$_POST['email']."'"; 
-    	
-    	# Query Database
-    	$user_exists = DB::instance(DB_NAME)->select_rows($q);
-    	
-    	# Check if email exists in database
-    		if(!empty($user_exists)){
-    		
-    			# Send to Login page
-	    		Router::redirect('/users/login');
-    		}
-    		
-    		else {
-	    		
-		    	# Mail Setup
-				$to = $_POST['email'];
-				$subject = "Welcome to Secure Online Forms";
-				$message = "Thanks for signing up with All Things European.  You now may login to our forms.";
-				$from = 'ladams@allthingseuropean.com';
-				$headers = "From:" . $from;         
-	    		
-	    		# More data we want stored with the user
-				$_POST['created'] = Time::now();
-				$_POST['modified'] = Time::now();
-    	
-				# Encrypt password
-				$_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
-    	
-				# Create encrypted token via email and random string
-				$_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
-    	
-				# Insert this user into the database
-				$user_id = DB::instance(DB_NAME)->insert('users', $_POST);
-    	
-				# Send Email
-                if(!$this->user) {
-	            	mail($to, $subject, $message, $headers);
-                }         
-    	
-				# Send to the login page
-				Router::redirect('/users/login');
-    		}
-    	}
+		public function p_signup($error = NULL) {
+			
+		# Sanitize Data Entry
+            $_POST = DB::instance(DB_NAME)->sanitize($_POST);
+			
+            # Set up Email / Password Query
+            $q = "SELECT * FROM users WHERE email = '".$_POST['email']."'"; 
+            
+            # Query Database
+            $user_exists = DB::instance(DB_NAME)->select_rows($q);
+            
+            # Check if email exists in database
+            	if(!empty($user_exists)){
+                    
+                    # Send to Login page
+                    # Pass error message along - to the login page - indicate 'user-exists' error
+                          Router::redirect('/users/signup/user-exists');
+                    }
+                    
+                    else {
+                            
+                     # Mail Setup
+                                $to = $_POST['email'];
+                                $subject = "Welcome to Secure Onlin Forms!";
+                                $message = "You now have an account as your email is your username.  Please visit our login page to try our forms.";
+                                $from = 'professorlarryadams@gmail.com';
+                                $headers = "From:" . $from;         
+                            
+                     # More data we want stored with the user
+                                $_POST['created'] = Time::now();
+                                $_POST['modified'] = Time::now();
+            
+                                # Encrypt password
+                                $_POST['password'] = sha1(PASSWORD_SALT.$_POST['password']);
+            
+                                # Create encrypted token via email and random string
+                                $_POST['token'] = sha1(TOKEN_SALT.$_POST['email'].Utils::generate_random_string());
+            
+                                # Insert this user into the database
+                                $user_id = DB::instance(DB_NAME)->insert('users', $_POST);
+            
+                                # Send Email
+								if(!$this->user) {
+											mail($to, $subject, $message, $headers);
+								}         
+            
+                                # Send to the login page
+                                Router::redirect('/users/login');
+                    		}
+    		}	
+			
     
     	/*-------------------------------------------------------------------------------------------------
     	Process the login form

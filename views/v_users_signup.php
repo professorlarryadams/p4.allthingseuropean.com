@@ -6,21 +6,23 @@
 <title>Registration Form</title>
 
 <!-- CSS -->
-<link href="../css/main.css" rel="stylesheet" type="text/css">
-<link href="../js/SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
-<link href="../css/SpryValidationPassword.css" rel="stylesheet" type="text/css" />
+<link href="/css/main.css" rel="stylesheet" type="text/css">
+<link href="/js/SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
+<link href="/js/SpryValidationPassword.css" rel="stylesheet" type="text/css">
+
 
 
 <!-- JS -->
 
-<script src="../js/SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
-<script src="../js/Script/jquery-1.4.4.min.js" type="text/javascript"></script>
-<script src="../js/Script/jquery.password-strength(new).min.js" type="text/javascript"></script>
-<script src="../js/SpryValidationPassword.js" type="text/javascript"></script>
+<script src="/js/SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+<script src="/js/Script/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="/js/Script/jquery.password-strength(new).min.js" type="text/javascript"></script>
+<script src="/js/SpryValidationPassword.js" type="text/javascript"></script>
+
 <script type="text/xml">
 <!--
 <oa:widgets>
-  <oa:widget wid="2527523" binding="#txtPassword" />
+  <oa:widget wid="2527523" binding="#password" />
 </oa:widgets>
 -->
 </script>
@@ -36,16 +38,11 @@
 	 	 
 		 }; 
      
-	   var myPSPlugin = $("[id$='txtPassword']").password_strength(password_settings);
+	   var myPSPlugin = $("[id$='password']").password_strength(password_settings);
 
     });    
 	 
   </script>
-  
-  <script>
-    $('input[name=timezone]').val(jstz.determine().name());
-</script>
-
 </head>
 
 <body>
@@ -63,7 +60,8 @@
     <label for="first_name"></label>
     <input type="text" name="first_name" id="first_name" title="Enter your first name.">
     <br />
-    <span class="textfieldRequiredMsg">You must enter your first name</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded maximum number of characters.</span></span><br><br></div>
+    <span class="textfieldRequiredMsg">You must enter your first name</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span>
+    <span class="textfieldMaxCharsMsg">Exceeded maximum number of characters.</span></span><br><br></div>
 
     <div><strong>Last Name:</strong><br />
     <span id="sprytextfield3">
@@ -73,19 +71,17 @@
     <br>
 
     <div><strong>Email:</strong><br />
-    <span id="sprytextfield2">
-    <label for="email"></label>
-    <input type="text" name="email" id="email" title="Enter your email."><br />
-    <span class="textfieldRequiredMsg">You must enter your email</span><span class="textfieldInvalidFormatMsg">Must be an email format</span><span class="textfieldMinCharsMsg">Minimum of 8 characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded maximum of 40 characters.</span></span><br /></div>
+      <span id="sprytextfield1">
+      <label for="email"></label>
+      <input type="text" name="email" id="email" title="Enter your email.">
+      <span class="textfieldRequiredMsg">A value is required.</span><span class="textfieldInvalidFormatMsg">Invalid format.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span></span><br /></div>
 
     <div><strong>Password:</strong><br />
-     <span id="sprypassword1">
-     <label for="txtPassword"></label>
-     <input type="password" name="password"  placeholder="txtPassword" id="txtPassword" title="Min 8 characters, Max of 20 characters, 1 capitol letter, 1 lower case, 1 number, and 1 special character">
-     <br />
-     <span class="passwordRequiredMsg">A value is required.</span><span class="passwordMinCharsMsg">Minimum number of characters not met.</span><span class="passwordMaxCharsMsg">Exceeded maximum number of characters.</span><span class="passwordInvalidStrengthMsg">The password doesn't meet the specified strength.</span></span></div>
+      <span id="sprypassword1">
+      <label for="password"></label>
+      <input type="password" name="password" id="password" placeholder="txtPassword" title="Must have MIN 8 and MAX 20 charcters, 1 lower, 1 UPPER, 1 Special Chararcter">
+      <span class="passwordRequiredMsg">A value is required.</span><span class="passwordMinCharsMsg">Minimum number of characters not met.</span><span class="passwordMaxCharsMsg">Exceeded maximum number of characters.</span><span class="passwordInvalidStrengthMsg">The password doesn't meet the specified strength.</span></span> </div>
 
-	
 	
 	<?php if(isset($error) && $error == 'blank-fields'): ?>
       </p>
@@ -95,11 +91,20 @@
       </div>
 
     <?php endif; ?>
+    
+    <?php if(isset($error) && $error == 'weak-password'): ?>
+        <div class='error'>
+            Your password is too weak try again. 
+            <a href="/users/signup">Signup</a>
+        </div>
+
+    <?php endif; ?>
+    
 
     <?php if(isset($error) && $error == 'email-exists'): ?>
         <div class='error'>
-            There is already an account associated with this email. 
-            <a href="/users/login">Login</a>
+            This email is all ready associate with an account. 
+          <a href="/users/login">Login</a>
         </div>
 
     <?php endif; ?>
@@ -110,17 +115,21 @@
 
 </form>
 
+<script type="text/javascript">
+var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3", "none", {hint:"Last Name", minChars:1, maxChars:40, hint:"Last Name"});
+var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4", "none", {hint:"First Name", minChars:1, maxChars:40});
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "email", {useCharacterMasking:true, hint:"name@email.com", minChars:4});
+</script>
+
 	</div><!--Content -->
 </div><!-- Container -->
 
 
-<script type="text/javascript">
-var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2", "email", {minChars:4, maxChars:40, useCharacterMasking:true, hint:"name@email.com"});
-var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3", "none", {minChars:1, maxChars:40, hint:"Last Name"});
-var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4", "none", {hint:"First Name", minChars:1, maxChars:40});
-var sprypassword1 = new Spry.Widget.ValidationPassword("sprypassword1", {minChars:8, maxChars:20, minAlphaChars:1, minNumbers:1, minUpperAlphaChars:1, minSpecialChars:1});
-</script>
 
+
+<script type="text/javascript">
+var sprypassword1 = new Spry.Widget.ValidationPassword("sprypassword1", {minChars:8, maxChars:20, minAlphaChars:1, minNumbers:1, minUpperAlphaChars:1, minSpecialChars:1, maxSpecialChars:1, maxUpperAlphaChars:1});
+</script>
 </body>
 </html>
 
