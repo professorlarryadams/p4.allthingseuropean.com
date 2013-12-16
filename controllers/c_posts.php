@@ -61,9 +61,55 @@ class posts_controller extends base_controller {
 		DB::instance(DB_NAME)->update('719B', $_POST, 'WHERE 719b_id = '.$record_id); 
 		
 		# Send them back to uploads page
-        Router::redirect("/posts/uploads"); 
+        Router::redirect('/posts/uploads'); 
 
     	}
+		
+	public function upload() {
+		
+		# Setup view
+        $this->template->content = View::instance('v_posts_uploads');
+        $this->template->title   = "Uploading files and images";
+
+        # Render template
+        echo $this->template;
+	
+	}		
+
+		 public function p_uploads() {
+			
+			# if user specified a new image file, upload it
+			if ($_FILES['uploads']['error'] == 0)
+			{
+				# upload an image
+				$upload = Upload::upload($_FILES, "/uploads/", array("JPG", "JPEG", "jpg", "jpeg", "png", "PNG", "pdf", "PDF", "DOCS", "docs", "xls"), $this->user->user_id);
+	
+				if($upload == 'Invalid file type.') {
+					# return an error
+					Router::redirect("/users/profile/error"); 
+				}
+				else {
+					# process the upload
+					$data = Array("uploads" => $uploads);
+					DB::instance(DB_NAME)->update("uploads", $data, "WHERE user_id = ".$this->user->user_id);
+	
+					# resize the image
+					$imgObj = new Image($_SERVER["DOCUMENT_ROOT"] . '/uploads/' . $upload);
+					$imgObj->resize(100,100, "crop");
+					$imgObj->save_image($_SERVER["DOCUMENT_ROOT"] . '/uploads/' . $upload); 
+				}
+			}
+			else
+			{
+				# return an error
+				Router::redirect("/users/profile/error");  
+			}
+	
+			# Redirect back to the profile page
+			router::redirect('/users/profile'); 
+    	} 
+			
+
 		
 		public function updates() {
 
@@ -95,61 +141,7 @@ class posts_controller extends base_controller {
     	}
 		
 		
-		public function uploads() {
-
-        # Setup view
-        $this->template->content = View::instance('v_posts_uploads');
-        $this->template->title   = "Updating Information";
-
-        # Render template
-        echo $this->template;
-
-    	}
 		
-		public function p_uploads() {
-			
-		# Associate this upload with this user
-        $_POST['user_id']  = $this->user->user_id;
-
-        # Unix timestamp of when this post was created
-        $_POST['created']  = Time::now();
-		
-		unset($_POST['submit']);
-		
-		if(isset($_POST['btnAdd'])) {
-		
-		$myFile = $_FILES['fileField']['name']; // Storing name into variable
-		
-		$newFileName = $anyNum.$myFile;
-		//===New string is concatenated====
-		//===Following Function will check if the File already exists========
-		
-		if (file_exists("upload/".$newFileName))
-		{
-		echo $newFileName." already exists. ";
-		}
-		//======If file already exists in your Folder, It will return zero and Will not take any action===
-		//======Otherwise File will be stored in your given directory and Will store its name in Database===
-		else
-		{
-		
-		$query = "insert into uploads(file_name) values ('$newFileName')";
-		
-		$q = mysql_query($query);
-		
-		copy($_FILES['fileField']['tmp_name'],'upload/'.$newFileName);
-		//===Copy File Into your given Directory,copy(Source,Destination)
-		
-		if($q =0)
-		{
-		//====$res will be greater than 0 only when File is uploaded Successfully====:)
-		echo 'You have Successfulluy Uploaded File';
-		}
-		}
-		}
-			
-			
-		}
 }
 		
 

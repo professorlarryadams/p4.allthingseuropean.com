@@ -10,7 +10,6 @@
                 parent::__construct();
     	} 
 
-	
 		public function index() {
         $this->template->content = View::instance('v_index_index');
     	}
@@ -38,9 +37,6 @@
 		
 		public function p_signup($error = NULL) {
 			
-		# Sanitize Data Entry
-            $_POST = DB::instance(DB_NAME)->sanitize($_POST);
-			
             # Set up Email / Password Query
             $q = "SELECT * FROM users WHERE email = '".$_POST['email']."'"; 
             
@@ -61,7 +57,7 @@
                                 $to = $_POST['email'];
                                 $subject = "Welcome to Secure Onlin Forms!";
                                 $message = "You now have an account as your email is your username.  Please visit our login page to try our forms.";
-                                $from = 'professorlarryadams@gmail.com';
+                                $from = 'admin@allthingseuropean.com';
                                 $headers = "From:" . $from;         
                             
                      # More data we want stored with the user
