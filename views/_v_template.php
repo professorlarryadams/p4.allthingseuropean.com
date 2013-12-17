@@ -32,8 +32,8 @@
 
 <div class="menu">
 
-                <a href='/'>Home</a> |
-        
+                <a href='/'>Home</a> | <a href="#">Contact</a> | 
+
                 <!-- Menu for users who are logged in -->
                 
 				<?php if($user): ?>

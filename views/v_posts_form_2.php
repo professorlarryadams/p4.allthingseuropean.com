@@ -76,12 +76,12 @@
               <div><strong>1. Transportation Worker's Identification Credential (TWIC)</strong></div>
                 
                   <div class="float_left"><label>
-                    <input type="checkbox" name="twic_receipt" value="twic_receipt" id="twic_0" title="Provide a receipt of your TWIC">
+                    <input type="checkbox" name="twic_receipt" value="yes" id="twic_0" title="Provide a receipt of your TWIC">
                     I have a valid TWIC or have applied for a TWIC with the TSA.</label>
                  </div>
                   
                   <div class="float_right"><label>
-                    <input type="checkbox" name="twic_exempt" value="twic_exempt" id="twic_1">
+                    <input type="checkbox" name="twic_exempt" value="yes" id="twic_1">
                     I am exempt from holding a valid TWIC</label>
 				  </div>
 	         
@@ -97,7 +97,7 @@ Forbes Dr., Martinsburg, WV 25404. For more information on MOS, please visit htt
 
               
                 <div class="float_left"><label>
-                  <input type="checkbox" name="mos_yes" value="yes_mos" id="mos_0">
+                  <input type="checkbox" name="mos_yes" value="yes" id="mos_0">
                   Yes, I would like to participate.</label> 
                 </div>
                
@@ -156,7 +156,7 @@ application or taking any action against my Merchant Mariner’s Credential. Aut
    		     
               <td colspan="2" >
                  <strong>7.  I am under 18 years of age and a notarized statement of parental/guardian consent is attached.</strong>
-                 <div class="float-left"><input name="parental_consent" type="checkbox" value="under_18" title="You must provided a Notarized Statement from your parents"></div>
+                 <div class="float-left"><input name="parental_consent" type="checkbox" value="yes" title="You must provided a Notarized Statement from your parents"></div>
 
               </td>
 	        </tr>

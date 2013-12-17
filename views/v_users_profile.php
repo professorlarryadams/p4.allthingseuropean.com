@@ -1,4 +1,5 @@
-<div class="red"><h2>Profile for <?=$user->first_name?> <?=$user->last_name?></h2></div>
+
+<div class="red"><h3>Profile for <?=$user->first_name?> <?=$user->last_name?></h3></div>
 
   	<div><strong>User ID: </strong>
   	<?=$user->user_id?></div><br />
@@ -9,10 +10,17 @@
     <div><strong>Created:</strong>
 	<?=$user->created?></div><br />
     
+<div class="red">
+  <h3>The profile page allows you to view your results of submission:</h3>
+</div>
     
-    <div class="red"><h3>Please select the view to see your application details</h3></div>
+    <div><a href="/posts/view">Page 1</a> | <a href="/posts/view2">Page 2</a> | <a href="/posts/uploads">Uploads</a> | <a href="/posts/updates">Updates</a></div>
     
-    <div class="blue"><a href="#">Page 1</a> | <a href="#">Page 2</a> | <a href="#">Uploads</a> | <a href="#">Updates</a></div>
+    <br />
+    
+    <h4>If you have any questions please feel free to contact me through the contact forms on the main menu.</h4>
+   
+      <p>&nbsp;</p>
     
     
   

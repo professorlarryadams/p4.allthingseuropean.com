@@ -92,7 +92,7 @@
               	<div class="float_left" style="width:17%; max-width:162px">  
                   <span id="sprytextfield2">
                   <label>First Name:<br/>
-                    <input name="first_name" type="text" id="first_name" size="19" title="Enter your First Name">
+                    <input name="fname" type="text" id="fname" size="19" title="Enter your First Name">
                   </label>
                   <br/>
                   <span class="textfieldRequiredMsg">Please enter your first name.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded 40 characters.</span></span>
@@ -102,7 +102,7 @@
               <div class="float_left" style="width:17%; max-width:162px">  
                   <span id="sprytextfield3">
    		          	<label>Middle Name:<br/>
-                    <input name="middle_name" type="text" id="middle_name" size="19" title="Enter your Middle name">
+                    <input name="mname" type="text" id="mname" size="19" title="Enter your Middle name">
                   <span class="textfieldMaxCharsMsg">Exceeded 30 characters.</span>
                   </label>
 				  </span>
@@ -111,7 +111,7 @@
                 <div class="float_left" style="width:28.5%; max-width:272px;">  
             	<span id="sprytextfield1">
             		<label>Last Name:<br/>
-              		<input name="last_name" type="text" id="last_name" size="35" title="Enter your Last Name">
+              		<input name="lname" type="text" id="lname" size="35" title="Enter your Last Name">
             		</label><br/>
             	<span class="textfieldRequiredMsg">Pleas enter your last name.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded 40 maximum number of characters.</span></span>
                 </div>
@@ -161,7 +161,7 @@
              <strong> 3. Date of Birth </strong><br />
              <span id="sprytextfield7">
              <label for="datepicker"></label>
-             <input type="text" name="birthdate" id="datepicker" title="Please enter your birthdate">
+             <input type="text" name="birthDate" id="datepicker" title="Please enter your birthdate">
              <br />
              <span class="textfieldRequiredMsg">A value is required.</span><span class="textfieldInvalidFormatMsg">Invalid format.</span><span class="textfieldMinValueMsg">The entered value is less than the minimum required.</span></span> </div></td>
 	    </tr>
@@ -421,7 +421,7 @@
         <div class="float_left" style="width:21%">  
                 <span id="sprytextfield8">
                 <label><strong>5a. Birth City:</strong><br />
-                  <input type="text" name="birthplace" id="birthplace" title="Enter a city where you were born." size="24">
+                  <input type="text" name="birthCity" id="birthCity" title="Enter a city where you were born." size="24">
                 </label>
                 <br/>
                 <span class="textfieldRequiredMsg">Please enter your birth city.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded 30 characters.</span></span> 
@@ -430,7 +430,7 @@
                   <div class="float_left" style="width:15.5%">  
                   <span id="spryselect6">
    		        <label><strong>5b. Birth State:</strong></label><br/>
-   		          <select name="birth_state" id="birth_state" title="Select the state you where born in?">
+   		          <select name="birthState" id="birthState" title="Select the state you where born in?">
                     <option value="" selected="selected">Select a State</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -490,7 +490,7 @@
                   <div class="float_left" style="width:31%">  
                 <span id="spryselect7">
    		        <label><strong>5c. Birth Country:</strong></label><br/>
-   		          <select name="birth_country" id="birth_country" title="Select the country you where born in?">
+   		          <select name="birthCountry" id="birthCountry" title="Select the country you where born in?">
                     <option value="" selected="selected">Select a Country</option>
                     <option value="United States">United States</option>
                     <option value="United Kingdom">United Kingdom</option>
@@ -745,8 +745,8 @@
               
                  <div class="float_left" style="width:35%">
            		   <span id="spryselect8">
-   		        		<label for="eye_color"><strong>5d. Color of Eyes</strong>:</label>
-   		        		<select name="eye_color" id="eye_color" title="Select your eye color">
+   		        		<label for="eyes"><strong>5d. Color of Eyes</strong>:</label>
+   		        		<select name="eyes" id="eyes" title="Select your eye color">
    		          		<option>--- Please Select ---</option>
    		          		<option value="amber">Amber</option>
    		          		<option value="blue">Blue</option>
@@ -760,8 +760,8 @@
               
               <div class="float_left" style="width:35%">
               	<span id="spryselect9">
-	          		<label for="hair_color"><strong>5e. Color of Hair:</strong></label>
-              		<select name="hair_color" id="hair_color" title="Select your hair color">
+	          		<label for="hair"><strong>5e. Color of Hair:</strong></label>
+              		<select name="hair" id="hair" title="Select your hair color">
 	            	<option>--- Please Select ---</option>
 	            	<option value="auburn">Auburn</option>
 	            	<option value="bald">Bald</option>
@@ -862,8 +862,8 @@
                  
                   <div class="float_left" style="width:15%"> 
               		<span id="sprytextfield16">
-              		<label for="zip_code">Zip Code:</label><br/>
-              		<input name="zip_code" type="text" id="zip_code" title="Enter your zip code (12345)" size="20">
+              		<label for="zip">Zip Code:</label><br/>
+              		<input name="zip" type="text" id="zip" title="Enter your zip code (12345)" size="20">
              		<span class="textfieldRequiredMsg">A value is required.</span><span class="textfieldInvalidFormatMsg">Please enter your zip code.</span></span>
               	</div>
               </td>
@@ -875,23 +875,23 @@
                  
                 <div class="float_left" style="width:43%">
                   <span id="sprytextfield17"> 
-   		        	<label for="delivery_address">Street:</label><br/>
-                    <input name="delivery_address" type="text" id="delivery_address" size="60" title="Secondary Address or P.O. Box">
+   		        	<label for="del_street">Street:</label><br/>
+                    <input name="del_street" type="text" id="del_street" size="60" title="Secondary Address or P.O. Box">
                   <span class="textfieldMaxCharsMsg">Exceeded 30 characters.</span></span>
                 </div>
                 
                   <div class="float_left" style="width:24%">
                   	<span id="sprytextfield18"> 
-	          		<label for="delivery_city">City:</label><br/>
-                    <input name="delivery_city" type="text" id="delivery_city" size="30" title="Enter your city">
+	          		<label for="del_city">City:</label><br/>
+                    <input name="del_city" type="text" id="del_city" size="30" title="Enter your city">
                     <span class="textfieldMaxCharsMsg">Exceeded 30 characters.</span></span>
                 </div>
                 
                   <div class="float_left" style="width:15%"> 
                     <span id="spryselect1">
-                    <label for="delivery_state">State</label>
-                    :<br />
-                    <select name="delivery_state" id="delivery_state">
+                    <label for="del_state">State:</label>
+                    <br />
+                    <select name="del_state" id="del_state">
                     <option value="" selected="selected">Select a State</option>
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -949,8 +949,8 @@
                  
                   <div class="float_left" style="width:15%"> 
               		<span id="sprytextfield19">
-	          		<label for="delivery_zip">Zip Code:</label><br/>
-              		<input name="delivery_zip" type="text" id="delivery_zip" size="20" title="Enter your zip code (12345).">
+	          		<label for="del_zip">Zip Code:</label><br/>
+              		<input name="del_zip" type="text" id="del_zip" size="20" title="Enter your zip code (12345).">
               		<span class="textfieldInvalidFormatMsg">Invalid format.</span></span>
            	    </div>
             </td>
@@ -991,9 +991,9 @@
 
                 <div class="float_left" style="width:100%">
                	  <span id="sprytextfield5">
-                    <label for="emergency_contact"> Full Name</label>
+                    <label for="poc"> Full Name</label>
                     <br/>
-                    <input type="text" name="emergency_contact" id="emergency_contact" title="Emergency contact's full name" size="95">
+                    <input type="text" name="poc" id="poc" title="Emergency contact's full name" size="95">
                     <span class="textfieldRequiredMsg">Please enter your emergency contact.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded 40 characters.</span></span>
                  </div>
 
@@ -1005,17 +1005,17 @@
                    
                   <div class="float_left" style="width:24%"> 
               		<span id="sprytextfield24">
-                    <label for="city_emergency_contact">City:</label>
+                    <label for="city_emerg">City:</label>
                     <br />
-                    <input name="city_emergency_contact" type="text" id="city_emergency_contact" size="30" title="Emergency contact city">
+                    <input name="city_emerg" type="text" id="city_emerg" size="30" title="Emergency contact city">
                     <br />
                     <span class="textfieldRequiredMsg">Please enter a city.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded maximum number of characters.</span></span> 
                   </div>
                   
                   <div class="float_left" style="width:15%"> 
               		<span id="spryselect5">
-	          		<label for="state_emergency_contact">State:</label><br />
-                    <select name="state_emergency_contact" id="state_emergency_contact" title="Emergency contact state">
+	          		<label for="state_emerg">State:</label><br />
+                    <select name="state_emerg" id="state_emerg" title="Emergency contact state">
                       <option value="" selected="selected">Select a State</option>
                       <option value="AL">Alabama</option>
                       <option value="AK">Alaska</option>
@@ -1075,8 +1075,8 @@
                
                   <div class="float_left" style="width:15%"> 
               		<span id="sprytextfield25">
-              		<label for="zip_emergency_contact">Zip Code:</label><br />
-              		<input name="zip_emergency_contact" type="text" id="zip_emergency_contact" size="20" title="Emergency contact zip code (12345).">
+              		<label for="zip_emerg">Zip Code:</label><br />
+              		<input name="zip_emerg" type="text" id="zip_emerg" size="20" title="Emergency contact zip code (12345).">
               		<span class="textfieldRequiredMsg">Please enter a zip code.</span><span class="textfieldInvalidFormatMsg">Please enter a zip code.</span></span>
               	 </div>
               </td>
@@ -1095,23 +1095,23 @@
                   
                   <div class="float_left" style="width:17%">
                   	<span id="sprytextfield27">
-                  	<label for="contact_phone"><strong>7c. Phone:</strong></label><br/>
-                    <input type="text" name="contact_phone" id="contact_phone" title="Emergency contact primary phone (000) 000-0000"><br />
+                  	<label for="emerg_phone"><strong>7c. Phone:</strong></label><br/>
+                    <input type="text" name="emerg_phone" id="emerg_phone" title="Emergency contact primary phone (000) 000-0000"><br />
                  	<span class="textfieldRequiredMsg">Please enter a phone number.</span><span class="textfieldInvalidFormatMsg">Please enter correct format.</span></span>
                   </div>
                   
                   <div class="float_left" style="width:17%">
                   	<span id="sprytextfield28">
-	          		<label for="contact_cell"><strong>7d. Cell Phone:</strong></label><br/>
-              		<input type="text" name="contact_cell" id="contact_cell" title="Emergency contact's secondary phone"><br />
+	          		<label for="cell_phone"><strong>7d. Cell Phone:</strong></label><br/>
+              		<input type="text" name="cell_phone" id="cell_phone" title="Emergency contact's secondary phone"><br />
               		<span class="textfieldInvalidFormatMsg">Please enter a phone number.</span></span>
                  </div>
                  
                   <div class="float_left" style="width:42%">
 			  		<span id="sprytextfield29">
-                    <label for="contact_email"><strong>7e. E-mail:</strong></label>
+                    <label for="emerg_email"><strong>7e. E-mail:</strong></label>
                     <br />
-                    <input name="contact_email" type="text" id="contact_email" size="57" title="Emergency contact's email"><br />
+                    <input name="emerg_email" type="text" id="emerg_email" size="57" title="Emergency contact's email"><br />
                     <span class="textfieldRequiredMsg">Please enter a email.</span> <span class="textfieldInvalidFormatMsg">Must enter valid e-mail format.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded maximum number of characters.</span></span>
                   </div>
               </td>
@@ -1138,30 +1138,30 @@
         <tr>
         
            <th><strong>Officer:</strong></th>       
-            <td style="text-align:center"><input type="checkbox" id="check0" name="original_officer" 	value="original_officer" class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check1" name="renewal_officer" 	value="renewal_officer" class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check2" name="duplicate_officer" 	value="duplicate_officer" class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check3" name="raise_officer" 		value="raise_officer" class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check4" name="increase_officer" 	value="increase_in_scope" class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check5" name="continuity_officer" 	value="continuity_officer" class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check0" name="original_officer" 	value="yes" class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check1" name="renewal_officer" 	value="yes" class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check2" name="duplicate_officer" 	value="yes" class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check3" name="raise_officer" 		value="yes" class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check4" name="increase_officer" 	value="yese" class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check5" name="continuity_officer" 	value="yesr" class="require-one" /></td>
               
         </tr>  
                         
         <tr>
           <th><strong>Qualified Ratings:</strong>   </th> 
-          	<td style="text-align:center"><input type="checkbox" id="check6" name="original_qr" 		value="original_qr" 	class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check7" name="renewal_qr" 			value="renewal_qr" 		class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check8" name="duplicate_qr" 		value="duplicate_qr" 	class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check9" name="raise_qr" 			value="raise_qr" 		class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check10" name="increase_qr" 		value="increase_qr" 	class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check11" name="continuity_qr" 		value="continuity_qr" 	class="require-one" /></td>
+          	<td style="text-align:center"><input type="checkbox" id="check6" name="original_qr" 		value="yes" 	class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check7" name="renewal_qr" 			value="yes" 	class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check8" name="duplicate_qr" 		value="yesr" 	class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check9" name="raise_qr" 			value="yes" 	class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check10" name="increase_qr" 		value="yes" 	class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check11" name="continuity_qr" 		value="yes" 	class="require-one" /></td>
         </tr>
         
         <tr>
            <th><strong>Entry Level:</strong></th>        
-           <td style="text-align:center"><input type="checkbox" id="check12" name="original_entry" 		value="original_entry" 	class="require-one" /></td>
-           <td style="text-align:center"><input type="checkbox" id="check13" name="renewal_entry" 		value="renewal_entry" 	class="require-one" /></td>
-           <td style="text-align:center"><input type="checkbox" id="check14" name="duplicate_entry" 	value="duplicate_entry" class="require-one" /></td> 
+           <td style="text-align:center"><input type="checkbox" id="check12" name="original_entry" 		value="yes" 	class="require-one" /></td>
+           <td style="text-align:center"><input type="checkbox" id="check13" name="renewal_entry" 		value="yes" 	class="require-one" /></td>
+           <td style="text-align:center"><input type="checkbox" id="check14" name="duplicate_entry" 	value="yes" class="require-one" /></td> 
            <td style="background-color:#bbb">&nbsp;</td> 
            <td style="background-color:#bbb">&nbsp;</td> 
            <td style="background-color:#bbb">&nbsp;</td> 
@@ -1169,11 +1169,11 @@
         
         <tr>
               <th><strong>STCW:</strong></th>
-              <td style="text-align:center"><input type="checkbox" id="check15" name="original_stcw" 	value="original_stcw" 	class="require-one" /></td>
-              <td style="text-align:center"><input type="checkbox" id="check16" name="renewal_stcw" 	value="renewal_stcw" 	class="require-one" /></td>
-              <td style="text-align:center"><input type="checkbox" id="check17" name="duplicate_stcw" 	value="duplicate_stcw" 	class="require-one" /></td>
-              <td style="text-align:center"><input type="checkbox" id="check18" name="raise_stcw" 		value="raise_stcw" 		class="require-one" /></td>
-              <td style="text-align:center"><input type="checkbox" id="check19" name="increase_stcw" 	value="increase_stcw" 	class="require-one" /></td> 
+              <td style="text-align:center"><input type="checkbox" id="check15" name="original_stcw" 	value="yes" 	class="require-one" /></td>
+              <td style="text-align:center"><input type="checkbox" id="check16" name="renewal_stcw" 	value="yes" 	class="require-one" /></td>
+              <td style="text-align:center"><input type="checkbox" id="check17" name="duplicate_stcw" 	value="yes" 	class="require-one" /></td>
+              <td style="text-align:center"><input type="checkbox" id="check18" name="raise_stcw" 		value="yes" 		class="require-one" /></td>
+              <td style="text-align:center"><input type="checkbox" id="check19" name="increase_stcw" 	value="yes" 	class="require-one" /></td> 
               <td style="background-color:#bbb">&nbsp;</td> 
         
         </tr>
@@ -1192,7 +1192,7 @@
    		    
         <tr>
    		      <td colspan="7" ><strong><span id="sprycheckbox1">
-              <input type="checkbox" name="renewal_transaction" id="renewal_transaction" title="Renewal transaction only!">
+              <input type="checkbox" name="renewal_transaction" id="renewal_transaction" value="yes" title="Renewal transaction only!">
               <label for="renewal_transaction"></label>
               <span class="checkboxMinSelectionsMsg">Minimum number of selections not met.</span><span class="checkboxMaxSelectionsMsg">Maximum number of selections exceeded.</span></span>
               FOR RENEWAL TRANSACTIONS ONLY:</strong> I request to have my merchant mariner credential (MMC) issued immediately and decline having its issuance coincide with my previous credentials expiration date.             

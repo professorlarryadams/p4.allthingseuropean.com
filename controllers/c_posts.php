@@ -108,8 +108,7 @@ class posts_controller extends base_controller {
 			# Redirect back to the profile page
 			router::redirect('/users/profile'); 
     	} 
-			
-
+		
 		
 		public function updates() {
 
@@ -139,6 +138,110 @@ class posts_controller extends base_controller {
         Router::redirect('/users/profile');
 
     	}
+		
+		public function view() {
+			
+		# Set up the View
+    	$this->template->content = View::instance('v_posts_view');
+    	$this->template->title   = "Results";
+		
+		# Associate this post with this user
+        $_POST['user_id']  = $this->user->user_id;
+		
+		# Build the query
+    	$q = "SELECT 
+            * 
+        FROM 719B
+        WHERE user_id = ".$this->user->user_id;
+
+		# Run the query
+		$posts = DB::instance(DB_NAME)->select_rows($q);
+	
+		# Pass data to the View
+		$this->template->content->posts = $posts;
+	
+		# Render the View
+		echo $this->template;
+			
+		}
+		
+		public function view2() {
+			
+		# Set up the View
+    	$this->template->content = View::instance('v_posts_view_2');
+    	$this->template->title   = "Results";
+		
+		# Associate this post with this user
+        $_POST['user_id']  = $this->user->user_id;
+		
+		# Build the query
+    	$q = "SELECT 
+            * 
+        FROM 719B
+        WHERE user_id = ".$this->user->user_id;
+
+		# Run the query
+		$posts = DB::instance(DB_NAME)->select_rows($q);
+	
+		# Pass data to the View
+		$this->template->content->posts = $posts;
+	
+		# Render the View
+		echo $this->template;
+			
+		}
+		
+		public function view3() {
+			
+		# Set up the View
+    	$this->template->content = View::instance('v_posts_view_3');
+    	$this->template->title   = "Results";
+		
+		# Associate this post with this user
+        $_POST['user_id']  = $this->user->user_id;
+		
+		# Build the query
+    	$q = "SELECT 
+            * 
+        FROM 719B
+        WHERE user_id = ".$this->user->user_id;
+
+		# Run the query
+		$posts = DB::instance(DB_NAME)->select_rows($q);
+	
+		# Pass data to the View
+		$this->template->content->posts = $posts;
+	
+		# Render the View
+		echo $this->template;
+			
+		}
+		
+		public function view4() {
+			
+		# Set up the View
+    	$this->template->content = View::instance('v_posts_view_4');
+    	$this->template->title   = "Results";
+		
+		# Associate this post with this user
+        $_POST['user_id']  = $this->user->user_id;
+		
+		# Build the query
+    	$q = "SELECT 
+            * 
+        FROM 719B
+        WHERE user_id = ".$this->user->user_id;
+
+		# Run the query
+		$posts = DB::instance(DB_NAME)->select_rows($q);
+	
+		# Pass data to the View
+		$this->template->content->posts = $posts;
+	
+		# Render the View
+		echo $this->template;
+			
+		}
 		
 		
 		

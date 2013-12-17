@@ -638,7 +638,7 @@
         
                         <div class="float_left" style="width:100%">
                           <span id="sprytextfield5">
-                            <label for="emergency_contact"> Full Name</label>
+                            <label for="POC"> Full Name</label>
                             <br/>
                             <input type="text" name="emergency_contact" id="emergency_contact" title="Emergency contact's full name" size="95"><br />
                             <span class="textfieldRequiredMsg">Please enter your emergency contact.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded 40 characters.</span></span>
@@ -646,23 +646,23 @@
         
                           <div class="float_left" style="width:43%">
                             <span id="sprytextfield12">
-                            <label for="emergency_street">Street:</label><br />
-                            <input name="emergency_street" type="text" id="emergency_street" size="60"><br />
+                            <label for="street">Street:</label><br />
+                            <input name="street" type="text" id="emergency_street" size="60"><br />
                         <span class="textfieldRequiredMsg">Please enter a street.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded 40 maximum number of characters.</span></span> </div>
                            
                           <div class="float_left" style="width:24%"> 
                             <span id="sprytextfield24">
-                            <label for="emergency_city">City:</label>
+                            <label for="city_emerg">City:</label>
                             <br />
-                            <input name="emergency_city" type="text" id="emergency_city" size="30" title="Emergency contact city">
+                            <input name="city_emerg" type="text" id="emergency_city" size="30" title="Emergency contact city">
                             <br />
                             <span class="textfieldRequiredMsg">Please enter a city.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded maximum number of characters.</span></span> 
                           </div>
                           
                           <div class="float_left" style="width:15%"> 
                             <span id="spryselect10">
-                            <label for="emergency_state">State:</label>
-                            <select name="emergency_state" id="emergency_state">
+                            <label for="state_emerg">State:</label>
+                            <select name="state_emerg" id="emergency_state">
                             <option value="AL">Alabama</option>
                               <option value="AK">Alaska</option>
                               <option value="AZ">Arizona</option>
@@ -719,8 +719,8 @@
                        
                           <div class="float_left" style="width:15%"> 
                             <span id="sprytextfield25">
-                            <label for="emergency_zip">Zip Code:</label><br />
-                            <input name="emergency_zip" type="text" id="zip_emergency_contact" size="20" title="Emergency contact zip code (12345)."><br />
+                            <label for="zip_emerg">Zip Code:</label><br />
+                            <input name="zip_emerg" type="text" id="zip_emergency_contact" size="20" title="Emergency contact zip code (12345)."><br />
                             <span class="textfieldRequiredMsg">Please enter a zip code.</span><span class="textfieldInvalidFormatMsg">Please enter a zip code.</span></span>
                          </div>
                       </td>
@@ -738,23 +738,23 @@
                           
                           <div class="float_left" style="width:17%">
                             <span id="sprytextfield27">
-                            <label for="contact_phone"><strong>7c. Phone:</strong></label><br/>
-                            <input type="text" name="emergency_contact_phone" id="contact_phone" title="Emergency contact primary phone (000) 000-0000"><br />
+                            <label for="emerg_phone"><strong>7c. Phone:</strong></label><br/>
+                            <input type="text" name="emerg_phone" id="emerg_phone" title="Emergency contact primary phone (000) 000-0000"><br />
                             <span class="textfieldRequiredMsg">Please enter a phone number.</span><span class="textfieldInvalidFormatMsg">Please enter correct format.</span></span>
                           </div>
                           
                           <div class="float_left" style="width:17%">
                             <span id="sprytextfield28">
-                            <label for="emergency_contact_cell"><strong>7d. Cell Phone:</strong></label><br/>
-                            <input type="text" name="emergency_contact_cell" id="emergency_contact_cell" title="Emergency contact's secondary phone"><br />
+                            <label for="cell_phone"><strong>7d. Cell Phone:</strong></label><br/>
+                            <input type="text" name="cell_phone" id="cell_phone" title="Emergency contact's secondary phone"><br />
                             <span class="textfieldInvalidFormatMsg">Please enter a phone number.</span></span>
                          </div>
                          
                           <div class="float_left" style="width:42%">
                             <span id="sprytextfield29">
-                            <label for="emergency_contact_email"><strong>7e. E-mail:</strong></label>
+                            <label for="emerg_email"><strong>7e. E-mail:</strong></label>
                             <br />
-                            <input name="emergency_contact_email" type="text" id="contact_email" size="57" title="Emergency contact's email"><br />
+                            <input name="emerg_email" type="text" id="emerg_email" size="57" title="Emergency contact's email"><br />
                             <span class="textfieldRequiredMsg">Please enter a email.</span> <span class="textfieldInvalidFormatMsg">Must enter valid e-mail format.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded maximum number of characters.</span></span>
                           </div>
                       </td>
