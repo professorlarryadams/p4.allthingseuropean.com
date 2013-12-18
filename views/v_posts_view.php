@@ -1,15 +1,27 @@
 <?php foreach($posts as $post): ?>
 
-<div class="container_12">
+<br />
 
-	<div class="standard centered">
+		<?php if($user): ?>
+        		<div class="red"><h4>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h4>
+        		<p> Welcome to the Merchant Mariner Credential Secure Electronic Application System (MMSEAS)</p></div>
+		<?php else: ?>
+        	<div class="red"><h2>Secure Online Forms</h2></div>
+		<?php endif; ?>
+        
+        <br />
+        
+        <p><a href="/posts/view_add"><img src="/public_html/images/icon.png" width="35" height="35" alt="Form" title="Application page 1"></a> <a href="/posts/view_add2"><img src="/public_html/images/icon.png" width="35" height="35" alt="Page 2" title="Application page 2"></a> <a href="/posts/view_uploads"><img src="/public_html/images/files.png" width="35" height="35" alt="uploads" title="View your uploads"></a> <a href="/posts/view_updates"><img src="/public_html/images/pages.jpeg" width="35" height="35" alt="updates" title="View your updates"></a></p>
+
+	<div class="container_12 standard centered">
     <br />
 
-<h3>Section I - Personal Data </h3>
-<div class="nav"><a href="/posts/view">Page 1</a> | <a href="/posts/view2">Page 2</a> | <a href="/posts/uploads">Uploads</a> | <a href="/posts/updates">Updates</a></div>
+<h3>Section I - Personal Data</h3>
+
 <br />
-  <div><strong> 1 - 4. Legal Name, Alias, Social Security #, Reference #, Alien Registration #, Birthdate, and Nationality</strong></div>
-  
+  <div>
+    <strong> 1 - 4. Legal Name, Alias, Social Security #, Reference #, Alien Registration #, Birthdate, and Nationality</strong></div>
+    
 <table width="97%" border="1" cellspacing="1" cellpadding="1">
   <tr>
     <th>First</th>
@@ -20,11 +32,11 @@
     <th>SSN</th>
     <th>Refernce #</th>
     <th>ARN</th>
-    <th>DOB</th>>
+    <th>DOB</th>
     <th>Nationality</th>
   </tr>
   <tr>
-    <td height="56" align="center"><?=$post['fname']?></td>
+    <td><?=$post['fname']?></td>
     <td><?=$post['mname']?></td>
     <td><?=$post['lname']?></td>
     <td><?=$post['suffix']?></td>
@@ -51,7 +63,7 @@
     <th>Zip</th>
   </tr>
   <tr>
-    <td height="52" align="center"><?=$post['birthCity']?></td>
+    <td><?=$post['birthCity']?></td>
     <td><?=$post['birthState']?></td>
     <td><?=$post['birthCountry']?></td>
     <td><?=$post['eyes']?></td>
@@ -74,7 +86,7 @@
     <th>email</th>
   </tr>
   <tr>
-    <td height="45" align="center"><?=$post['del_street']?></td>
+    <td><?=$post['del_street']?></td>
     <td><?=$post['del_city']?></td>
     <td><?=$post['del_state']?></td>
     <td><?=$post['del_zip']?></td>
@@ -117,15 +129,15 @@
     <th>Email</th>
   </tr>
   <tr>
-    <td height="47" align="center"><?=$post['relationship']?></td>
+    <td><?=$post['relationship']?></td>
     <td><?=$post['emerg_phone']?></td>
     <td><?=$post['cell_phone']?></td>
     <td><?=$post['emerg_email']?></td>
   </tr>
 </table>
 
-<h2>Section II - Coast Guard Crednetials or Endorcement Type(s)<br />
-</h2>
+<h3>Section II - Coast Guard Crednetials or Endorcement Type(s)<br />
+</h3>
 <table width="97%" border="1" cellspacing="1" cellpadding="1">
   <tr>
     <th><strong>Endorcement Categories:</strong></th>
@@ -185,7 +197,6 @@
   <tr>
   	<th>Renewal Transaction only!</th>
   </tr>
-  
   <tr>
     <td><?=$post['renewal_transaction']?></td>
   </tr>
@@ -194,6 +205,5 @@
 </div>
 </div>
 </div>
-    
 
 <?php endforeach; ?>

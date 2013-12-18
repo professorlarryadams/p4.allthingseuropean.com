@@ -49,7 +49,7 @@
 
 <div class="container">
 
-	<div id="content">
+<div id="content">
 
 <form method='POST' enctype="multipart/form-data"  action="/users/p_signup">
 
@@ -119,17 +119,11 @@
 var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3", "none", {hint:"Last Name", minChars:1, maxChars:40, hint:"Last Name"});
 var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4", "none", {hint:"First Name", minChars:1, maxChars:40});
 var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "email", {useCharacterMasking:true, hint:"name@email.com", minChars:4});
+var sprypassword1 = new Spry.Widget.ValidationPassword("sprypassword1", {minChars:8, maxChars:20, minAlphaChars:1, minNumbers:1, minUpperAlphaChars:1, minSpecialChars:1, maxSpecialChars:1, maxUpperAlphaChars:1});
 </script>
 
 	</div><!--Content -->
 </div><!-- Container -->
-
-
-
-
-<script type="text/javascript">
-var sprypassword1 = new Spry.Widget.ValidationPassword("sprypassword1", {minChars:8, maxChars:20, minAlphaChars:1, minNumbers:1, minUpperAlphaChars:1, minSpecialChars:1, maxSpecialChars:1, maxUpperAlphaChars:1});
-</script>
 </body>
 </html>
 

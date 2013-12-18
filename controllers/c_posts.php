@@ -186,7 +186,7 @@ class posts_controller extends base_controller {
     	$q = "SELECT 
             * 
         FROM 719B
-        WHERE user_id = ".$this->user->user_id;
+        WHERE user_id = " .$this->user->user_id;
 
 		# Run the query
 		$posts = DB::instance(DB_NAME)->select_rows($q);

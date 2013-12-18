@@ -39,28 +39,23 @@
     $( document ).tooltip();
   });
   </script> 
-  
 
 </head>
-<!-- Body -->
 
 <body>
 
-<!--Container -->
-
-	<div class="container_12"> 
-
-		<div class="standard">
+	<div class="container_12 standard"> 
     
-    	<div class="centered"><br />    
+    <br />
+ 
+			<div class="centered">
 			<?php if($user): ?>
         		<div class="red"><h4>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h4>
         		<p> Welcome to the Merchant Mariner Credential Secure Electronic Application System (MMSEAS)</p></div>
-		<?php else: ?>
-        	<div class="red"><h2>Secure Online Forms</h2></div>
-		<?php endif; ?>
-    
-    </div>
+			<?php else: ?>
+        		<div class="red"><h2>Secure Online Forms</h2></div>
+			<?php endif; ?>
+            </div>
    
   
   	<form  action="/posts/p_add" method="post" enctype="multipart/form-data" name="719B" id="myform">	  
@@ -1210,8 +1205,6 @@
       </table>
  	
     </form>
- 
-	</div><!-- Standard end -->
 
 </div><!-- Container end -->	
   

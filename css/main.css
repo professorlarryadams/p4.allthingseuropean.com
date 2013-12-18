@@ -12,7 +12,7 @@ body {
 
 div {padding:0; margin:0;}
 
-.container_12 {max-width:1080px; background-color:#fff; margin-left:10px; margin-right:10px; padding:0; margin: 0 auto;}
+.container_12 {max-width:1080px; background-color:#fff;  margin-left:10px; margin-right:10px; padding:0; margin: 0 auto;}
 
 /* ~~the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo~~ */
 .header {
@@ -26,8 +26,8 @@ div {padding:0; margin:0;}
 	clear: both;
 	width: 1040px;
 	margin: auto;
-	margin-top: 5px;
-	padding-top: 0;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	text-align: left;
 	background-color: #FFF;
 	border: solid;

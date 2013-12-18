@@ -28,32 +28,26 @@
     $( document ).tooltip();
   });
   </script> 
-  
-
 
 </head>
 <!-- Body -->
 
 <body>
 
-<!-- Outside Container -->
-
-<div class="container_12"> 
-
-	<div class="standard">
+<div class="container_12 standard"> 
     
-    <div class="centered"><br />    
+    <br />     
 	
+		<div class="centered red">
 		<?php if($user): ?>
-        	<div class="red"><h4>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h4>
+        	<h4>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h4>
         
-        	<p> Welcome to the Merchant Mariner Credential Secure Electronic Application System (MMSEAS)</p></div>
+        	<p>Welcome to the Merchant Mariner Credential Secure Electronic Application System (MMSEAS)</p>
 		<?php else: ?>
-        	<div class="red"><h2>Secure Online Forms</h2></div>
+        	<h2>Secure Online Forms</h2>
 		<?php endif; ?>
-    </div>
-   
-  
+        </div>
+
   	<form  action="/posts/add_updates" method="post" enctype="multipart/form-data" id="myform">
    		  
    		<table>
@@ -77,7 +71,7 @@
                         <div class="float_left" style="width:17%; max-width:162px">  
                           <span id="sprytextfield2">
                           <label>First Name:<br/>
-                            <input name="first_name" type="text" id="first_name" size="19" title="Enter your First Name">
+                            <input name="fname" type="text" id="fname" size="19" title="Enter your First Name">
                           </label>
                           <br/>
                           <span class="textfieldRequiredMsg">Please enter your first name.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded 40 characters.</span></span>
@@ -87,7 +81,7 @@
                       <div class="float_left" style="width:17%; max-width:162px">  
                           <span id="sprytextfield3">
                             <label>Middle Name:<br/>
-                            <input name="middle_name" type="text" id="middle_name" size="19" title="Enter your Middle name">
+                            <input name="mname" type="text" id="mname" size="19" title="Enter your Middle name">
                           <span class="textfieldMaxCharsMsg">Exceeded 30 characters.</span>
                           </label>
                           </span>
@@ -96,7 +90,7 @@
                         <div class="float_left" style="width:28.5%; max-width:272px;">  
                         <span id="sprytextfield1">
                             <label>Last Name:<br/>
-                            <input name="last_name" type="text" id="last_name" size="35" title="Enter your Last Name">
+                            <input name="lname" type="text" id="lname" size="35" title="Enter your Last Name">
                             </label><br/>
                         <span class="textfieldRequiredMsg">Pleas enter your last name.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded 40 maximum number of characters.</span></span>
                         </div>
@@ -393,8 +387,8 @@
                       
                          <div class="float_left" style="width:35%">
                            <span id="spryselect8">
-                                <label for="eye_color"><strong>5d. Color of Eyes</strong>:</label>
-                                <select name="eye_color" id="eye_color" title="Select your eye color">
+                                <label for="eyes"><strong>5d. Color of Eyes</strong>:</label>
+                                <select name="eyes" id="eye_color" title="Select your eye color">
                                 <option>--- Please Select ---</option>
                                 <option value="amber">Amber</option>
                                 <option value="blue">Blue</option>
@@ -408,8 +402,8 @@
                       
                       <div class="float_left" style="width:35%">
                         <span id="spryselect9">
-                            <label for="hair_color"><strong>5e. Color of Hair:</strong></label>
-                            <select name="hair_color" id="hair_color" title="Select your hair color">
+                            <label for="hair"><strong>5e. Color of Hair:</strong></label>
+                            <select name="hair" id="hair_color" title="Select your hair color">
                             <option>--- Please Select ---</option>
                             <option value="auburn">Auburn</option>
                             <option value="bald">Bald</option>
@@ -523,22 +517,22 @@
                          
                         <div class="float_left" style="width:43%">
                           <span id="sprytextfield17"> 
-                            <label for="delivery_address">Street:</label><br/>
-                            <input name="delivery_address" type="text" id="delivery_address" size="60" title="Secondary Address or P.O. Box">
+                            <label for="del_address">Street:</label><br/>
+                            <input name="del_address" type="text" id="del_address" size="60" title="Secondary Address or P.O. Box">
                           <span class="textfieldMaxCharsMsg">Exceeded 30 characters.</span></span>
                         </div>
                         
                           <div class="float_left" style="width:24%">
                             <span id="sprytextfield18"> 
-                            <label for="delivery_city">City:</label><br/>
-                            <input name="delivery_city" type="text" id="delivery_city" size="30" title="Enter your city">
+                            <label for="del_city">City:</label><br/>
+                            <input name="del_city" type="text" id="del_city" size="30" title="Enter your city">
                             <span class="textfieldMaxCharsMsg">Exceeded 30 characters.</span></span>
                         </div>
                         
                           <div class="float_left" style="width:15%"> 
                             <span id="spryselect4">
-                            <label for="delivery_state">State:</label>
-                            <select name="delivery_state" id="delivery_state2">
+                            <label for="del_state">State:</label>
+                            <select name="del_state" id="delivery_state2">
                             <option value="" selected="selected">Select a State</option>
                               <option value="AL">Alabama</option>
                               <option value="AK">Alaska</option>
@@ -596,8 +590,8 @@
                          
                           <div class="float_left" style="width:15%"> 
                             <span id="sprytextfield19">
-                            <label for="delivery_zip">Zip Code:</label><br/>
-                            <input name="delivery_zip" type="text" id="delivery_zip" size="20" title="Enter your zip code (12345).">
+                            <label for="del_zip">Zip Code:</label><br/>
+                            <input name="del_zip" type="text" id="delivery_zip" size="20" title="Enter your zip code (12345).">
                             <span class="textfieldInvalidFormatMsg">Invalid format.</span></span>
                         </div>
                     </td>
@@ -638,31 +632,32 @@
         
                         <div class="float_left" style="width:100%">
                           <span id="sprytextfield5">
-                            <label for="POC"> Full Name</label>
+                            <label for="emerg_contact"> Full Name</label>
                             <br/>
-                            <input type="text" name="emergency_contact" id="emergency_contact" title="Emergency contact's full name" size="95"><br />
+                            <input type="text" name="emerg_contact" id="emerg_contact" title="Emergency contact's full name" size="95"><br />
                             <span class="textfieldRequiredMsg">Please enter your emergency contact.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded 40 characters.</span></span>
                          </div>
         
                           <div class="float_left" style="width:43%">
                             <span id="sprytextfield12">
-                            <label for="street">Street:</label><br />
-                            <input name="street" type="text" id="emergency_street" size="60"><br />
+                            <label for="emerg_street">Street:</label><br />
+                            <input name="emerg_street" type="text" id="emerg_street" size="60"><br />
                         <span class="textfieldRequiredMsg">Please enter a street.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded 40 maximum number of characters.</span></span> </div>
                            
                           <div class="float_left" style="width:24%"> 
                             <span id="sprytextfield24">
-                            <label for="city_emerg">City:</label>
+                            <label for="emerg_city">City:</label>
                             <br />
-                            <input name="city_emerg" type="text" id="emergency_city" size="30" title="Emergency contact city">
+                            <input name="emerg_city" type="text" id="emerg_city" size="30" title="Emergency contact city">
                             <br />
                             <span class="textfieldRequiredMsg">Please enter a city.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded maximum number of characters.</span></span> 
                           </div>
                           
                           <div class="float_left" style="width:15%"> 
                             <span id="spryselect10">
-                            <label for="state_emerg">State:</label>
-                            <select name="state_emerg" id="emergency_state">
+                            <label for="emerg_state">State:</label>
+                            <select name="emerg_state" id="emerg_state">
+                            <option value="" selected="selected">Select a State</option>
                             <option value="AL">Alabama</option>
                               <option value="AK">Alaska</option>
                               <option value="AZ">Arizona</option>
@@ -719,8 +714,8 @@
                        
                           <div class="float_left" style="width:15%"> 
                             <span id="sprytextfield25">
-                            <label for="zip_emerg">Zip Code:</label><br />
-                            <input name="zip_emerg" type="text" id="zip_emergency_contact" size="20" title="Emergency contact zip code (12345)."><br />
+                            <label for="emerg_zip">Zip Code:</label><br />
+                            <input name="emerg_zip" type="text" id="emerg_zip" size="20" title="Emergency contact zip code (12345)."><br />
                             <span class="textfieldRequiredMsg">Please enter a zip code.</span><span class="textfieldInvalidFormatMsg">Please enter a zip code.</span></span>
                          </div>
                       </td>
@@ -790,7 +785,6 @@
     
     </form>
  
-    </div><!--Content end -->
 
 </div><!-- Container end -->
   
@@ -824,7 +818,7 @@ var sprytextfield5 = new Spry.Widget.ValidationTextField("sprytextfield5", "none
 var sprytextfield11 = new Spry.Widget.ValidationTextField("sprytextfield11", "integer", {isRequired:false, minChars:1, maxChars:11, hint:"Numbers only", useCharacterMasking:true});
 var sprytextfield12 = new Spry.Widget.ValidationTextField("sprytextfield12", "none", {minChars:1, maxChars:40, hint:"Street"});
 var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1", {maxChars:400, hint:"Enter description of your request here."});
-var spryselect4 = new Spry.Widget.ValidationSelect("spryselect4");
+var spryselect4 = new Spry.Widget.ValidationSelect("spryselect4", {isRequired:false});
 var spryselect10 = new Spry.Widget.ValidationSelect("spryselect10");
 </script>
 </body>

@@ -8,13 +8,13 @@
         <!-- CSS File we want on every page -->
         
          <link href="/css/main.css" rel="stylesheet" type="text/css">
-         <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet">
+         <link href="/css/jquery-ui.css" rel="stylesheet">
   
           <!-- JS File we want on every page -->
         
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
-        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>  
+        <script src="/js/jquery-1.9.1.js"></script>
+        <script src="/js/jquery-ui.js"></script>  
                            
                                                                                 
         <!-- Controller Specific JS/CSS -->
@@ -50,14 +50,11 @@
                     <a href='/users/login'>Log in</a> |
         
                 <?php endif; ?>
-        
             </div>
 
-	<div class="content">
-        
             <?php if(isset($content)) echo $content; ?>
             
-            <!--content --></div>
+            
     <!--container_12 --></div>
 
 </body>

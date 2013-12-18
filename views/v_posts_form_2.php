@@ -34,21 +34,16 @@
 
 <body>
 
-<div class="container_12">
-
-<div class="standard">
-
-	<div class="centered"> <br />   
-		<?php if($user): ?>
+<div class="container_12 standard">
+<br /> 
+		
+		<div class="centered"><?php if($user): ?>
         	<div class="red"><h4>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h4>
         
         	<p> Welcome to the Merchant Mariner Credential Secure Electronic Application System (MMSEAS)</p></div>
 		<?php else: ?>
         	<div class="red"><h2>Secure Online Forms</h2></div>
-		<?php endif; ?>
-    </div>
-
-	<div class="content">
+		<?php endif; ?></div>
   
   <form name="719B" id="myform" method="post" action="/posts/p_add2">
    		  
@@ -331,12 +326,9 @@ application or taking any action against my Merchant Mariner’s Credential. Aut
             </tr>
       </table>
   </form>
-    
-<!-- end .content --></div>
-  
-  <!-- end .standard --></div>
-  
-  	<!-- container_12 --></div>
+
+  </div>
+
 <script type="text/javascript">
 var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1", "none", {isRequired:false});
 var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2", "none", {isRequired:false});
@@ -348,6 +340,6 @@ var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {isRequired:fa
 var sprytextfield5 = new Spry.Widget.ValidationTextField("sprytextfield5");
 var spryselect2 = new Spry.Widget.ValidationSelect("spryselect2");
 </script>
-
+ 
 </body>
 </html>
