@@ -18,20 +18,18 @@
 
 <body>
 
-<div class="container">
+<div class="container_12 standard">
     
         <div class="demo">                        
         <h1>Selecting multiple files for upload</h1>
 		<p>PHP File Uploader allows you to select multiple files and upload them at once.</p>
         <p>Limit is 2 megabytes per upload!</p>
 		    
-			<form  enctype="multipart/form-data" method="post" action="/posts/upload">
+			<form  enctype="multipart/form-data" method="post" action="/posts/p_uploads">
 			
             <input name="uploads" type="file" id="uploads" />
 
 			<input type="submit" id="uploads" value="Uploads" />
-            
-            <input type="hidden" name="MAX_FILE_SIZE" value="20000000">
             
             <progress id="progressBar" value="0" max="100" style="width: 300px;"></progress>
             <h3 id="status"></h3>

@@ -39,7 +39,7 @@
 				<?php if($user): ?>
                     <a href='/users/profile'>Profile</a> |
                     <a href='/posts/add'>Form</a> |
-                    <a href='/posts/upload'>Uploads</a> |
+                    <a href='/posts/uploads'>Uploads</a> |
                     <a href='/posts/updates'>Updates</a> |
                     <a href='/users/logout'>Logout</a> |
         

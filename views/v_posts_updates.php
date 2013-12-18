@@ -54,7 +54,7 @@
     </div>
    
   
-  	<form  action="/posts/p_updates" method="post" enctype="multipart/form-data" id="myform">
+  	<form  action="/posts/add_updates" method="post" enctype="multipart/form-data" id="myform">
    		  
    		<table>
                 <tr>
@@ -806,7 +806,6 @@ var sprytextfield20 = new Spry.Widget.ValidationTextField("sprytextfield20", "ph
 var sprytextfield21 = new Spry.Widget.ValidationTextField("sprytextfield21", "phone_number", {isRequired:false, hint:"(000) 000-0000", useCharacterMasking:true});
 var sprytextfield22 = new Spry.Widget.ValidationTextField("sprytextfield22", "email", {hint:"name@email.com", useCharacterMasking:true});
 var sprytextfield24 = new Spry.Widget.ValidationTextField("sprytextfield24", "none", {hint:"City", minChars:1, maxChars:40});
-var spryselect5 = new Spry.Widget.ValidationSelect("spryselect5");
 var sprytextfield25 = new Spry.Widget.ValidationTextField("sprytextfield25", "zip_code", {hint:"22655", useCharacterMasking:true});
 var sprytextfield26 = new Spry.Widget.ValidationTextField("sprytextfield26", "none", {minChars:1, maxChars:30, hint:"Family Relationship"});
 var sprytextfield27 = new Spry.Widget.ValidationTextField("sprytextfield27", "phone_number", {hint:"(000) 000-0000", useCharacterMasking:true});
@@ -818,17 +817,12 @@ var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3", "none
 var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4", "none", {isRequired:false, hint:"Former name", maxChars:50});
 var sprytextfield6 = new Spry.Widget.ValidationTextField("sprytextfield6", "integer", {isRequired:false, hint:"numbers only", maxChars:11});
 var spryselect2 = new Spry.Widget.ValidationSelect("spryselect2");
-var sprytextfield8 = new Spry.Widget.ValidationTextField("sprytextfield8", "none", {minChars:1, maxChars:30, hint:"City"});
-var spryselect6 = new Spry.Widget.ValidationSelect("spryselect6");
-var spryselect7 = new Spry.Widget.ValidationSelect("spryselect7");
 var spryselect8 = new Spry.Widget.ValidationSelect("spryselect8");
 var spryselect9 = new Spry.Widget.ValidationSelect("spryselect9");
 var sprytextfield10 = new Spry.Widget.ValidationTextField("sprytextfield10", "none", {hint:"Suffix", isRequired:false, maxChars:15});
 var sprytextfield5 = new Spry.Widget.ValidationTextField("sprytextfield5", "none", {hint:"Full name", minChars:1, maxChars:40});
 var sprytextfield11 = new Spry.Widget.ValidationTextField("sprytextfield11", "integer", {isRequired:false, minChars:1, maxChars:11, hint:"Numbers only", useCharacterMasking:true});
-var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1");
 var sprytextfield12 = new Spry.Widget.ValidationTextField("sprytextfield12", "none", {minChars:1, maxChars:40, hint:"Street"});
-
 var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1", {maxChars:400, hint:"Enter description of your request here."});
 var spryselect4 = new Spry.Widget.ValidationSelect("spryselect4");
 var spryselect10 = new Spry.Widget.ValidationSelect("spryselect10");

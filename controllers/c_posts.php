@@ -65,7 +65,7 @@ class posts_controller extends base_controller {
 
     	}
 		
-	public function upload() {
+	public function uploads() {
 		
 		# Setup view
         $this->template->content = View::instance('v_posts_uploads');
@@ -77,6 +77,9 @@ class posts_controller extends base_controller {
 	}		
 
 		 public function p_uploads() {
+			 
+		# Associate this post with this user
+        $_POST['user_id']  = $this->user->user_id;
 			
 			# if user specified a new image file, upload it
 			if ($_FILES['uploads']['error'] == 0)
@@ -92,6 +95,11 @@ class posts_controller extends base_controller {
 					# process the upload
 					$data = Array("uploads" => $uploads);
 					DB::instance(DB_NAME)->update("uploads", $data, "WHERE user_id = ".$this->user->user_id);
+					
+					$_POST['created'] = Time::now();
+				
+					# Insert this user into the database
+                	$upload = DB::instance(DB_NAME)->insert('uploads', $_POST);
 	
 					# resize the image
 					$imgObj = new Image($_SERVER["DOCUMENT_ROOT"] . '/uploads/' . $upload);
@@ -121,7 +129,7 @@ class posts_controller extends base_controller {
 
     	}
 
-    	public function p_updates() {
+    	public function add_updates() {
 
         # Associate this post with this user
         $_POST['user_id']  = $this->user->user_id;
@@ -139,7 +147,7 @@ class posts_controller extends base_controller {
 
     	}
 		
-		public function view() {
+		public function view_add() {
 			
 		# Set up the View
     	$this->template->content = View::instance('v_posts_view');
@@ -165,7 +173,7 @@ class posts_controller extends base_controller {
 			
 		}
 		
-		public function view2() {
+		public function view_add2() {
 			
 		# Set up the View
     	$this->template->content = View::instance('v_posts_view_2');
@@ -191,10 +199,10 @@ class posts_controller extends base_controller {
 			
 		}
 		
-		public function view3() {
+		public function view_uploads() {
 			
 		# Set up the View
-    	$this->template->content = View::instance('v_posts_view_3');
+    	$this->template->content = View::instance('v_posts_view_uploads');
     	$this->template->title   = "Results";
 		
 		# Associate this post with this user
@@ -217,10 +225,10 @@ class posts_controller extends base_controller {
 			
 		}
 		
-		public function view4() {
+		public function view_updates() {
 			
 		# Set up the View
-    	$this->template->content = View::instance('v_posts_view_4');
+    	$this->template->content = View::instance('v_posts_view_updates');
     	$this->template->title   = "Results";
 		
 		# Associate this post with this user
