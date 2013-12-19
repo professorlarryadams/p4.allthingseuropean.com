@@ -9,9 +9,7 @@
         	<div class="red"><h2>Secure Online Forms</h2></div>
 		<?php endif; ?>
         
-        <br />
-        
-        <p><a href="/posts/view_add"><img src="/public_html/images/icon.png" width="35" height="35" alt="Form" title="Application page 1"></a> <a href="/posts/view_add2"><img src="/public_html/images/icon.png" width="35" height="35" alt="Page 2" title="Application page 2"></a> <a href="/posts/view_uploads"><img src="/public_html/images/files.png" width="35" height="35" alt="uploads" title="View your uploads"></a> <a href="/posts/view_updates"><img src="/public_html/images/pages.jpeg" width="35" height="35" alt="updates" title="View your updates"></a></p>
+        <p><a href="/posts/view_add"><img src="/images/icon.png" width="35" height="35" alt="Form" title="Application page 1"></a> <a href="/posts/view_add2"><img src="/images/icon.png" width="35" height="35" alt="Page 2" title="Application page 2"></a> <a href="/posts/view_uploads"><img src="/images/files.png" width="35" height="35" alt="uploads" title="View your uploads"></a> <a href="/posts/view_updates"><img src="/images/pages.jpeg" width="35" height="35" alt="updates" title="View your updates"></a></p>
 <div class="container_12 standard centered">
 <br />
 
@@ -113,39 +111,39 @@
   <tr>
     <th colspan="4"><strong>8. Third Party Authorization (optional)</strong></tr>
   <tr>
-    <td width="36%" style="text-align:right">8a. Saftey and Suitability </td>
-    <td width="17%"><?=$post['sse_authorize	']?></td>
-    <td width="16%" style="text-align:right">Name of Organization:      </td>
-    <td width="31%"><?=$post['3rdPartyName']?></td>
+    <td width="26%" style="text-align:left"><strong>8a. Saftey and Suitability :</strong></td>
+    <td width="7%"><?=$post['sse_authorize']?></td>
+    <td width="27%" style="text-align:right"><strong>Organization:</strong></td>
+    <td width="40%"><?=$post['3rdPartyName']?></td>
     </tr>
   <tr>
-    <td style="text-align:right">8b. Medical </td>
+    <td style="text-align:left"><strong>8b. Medical :</strong></td>
     <td><?=$post['medical_authorize']?></td>
-    <td style="text-align:right">Point of Contact:       </td>
+    <td style="text-align:right"><strong>Point of Contact:       </strong></td>
     <td><?=$post['3rdPartyPOC']?></td>
     </tr>
   <tr>
-    <td style="text-align:right">8c. Professional Qualifications</td>
+    <td style="text-align:left"><strong>8c. Professional Qualifications:</strong></td>
     <td><?=$post['pq_authorize']?></td>
-    <td style="text-align:right">Address:      </td>
+    <td style="text-align:right"><strong>Address:      </strong></td>
     <td><?=$post['3rdPartyStreet']?></td>
     </tr>
   <tr>
-    <td style="text-align:right">8d. Merchant Mariner Credential Delivery</td>
+    <td style="text-align:left"><strong>8d. Merchant Mariner Credential Delivery:</strong></td>
     <td><?=$post['delivery_authorize']?></td>
-    <td style="text-align:right">City, 
+    <td style="text-align:right"><strong>City, 
       
       State 
       
-      , Zip Code:      </td>
+      , Zip:      </strong></td>
     <td><?=$post['3rdPartyCity']?>
       <?=$post['3rdPartyState']?>
       <?=$post['3rdPartyZip']?></td>
     </tr>
   <tr>
-    <td style="text-align:right">8e. Act on my behalf </td>
+    <td style="text-align:left"><strong>8e. Act on my behalf :</strong></td>
     <td><?=$post['original_stcw']?></td>
-    <td style="text-align:right">Phone:      </td>
+    <td style="text-align:right"><strong>Phone:      </strong></td>
     <td><?=$post['3rdPartyPhone']?></td>
     </tr>
 </table> 

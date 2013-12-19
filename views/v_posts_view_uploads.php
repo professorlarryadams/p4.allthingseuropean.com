@@ -9,9 +9,7 @@
         	<div class="red"><h2>Secure Online Forms</h2></div>
 		<?php endif; ?>
         
-        <br />
-        
-        <p><a href="/posts/view_add"><img src="/public_html/images/icon.png" width="35" height="35" alt="Form" title="Application page 1"></a> <a href="/posts/view_add2"><img src="/public_html/images/icon.png" width="35" height="35" alt="Page 2" title="Application page 2"></a> <a href="/posts/view_uploads"><img src="/public_html/images/files.png" width="35" height="35" alt="uploads" title="View your uploads"></a> <a href="/posts/view_updates"><img src="/public_html/images/pages.jpeg" width="35" height="35" alt="updates" title="View your updates"></a></p>
+        <p><a href="/posts/view_add"><img src="/images/icon.png" width="35" height="35" alt="Form" title="Application page 1"></a> <a href="/posts/view_add2"><img src="/images/icon.png" width="35" height="35" alt="Page 2" title="Application page 2"></a> <a href="/posts/view_uploads"><img src="/images/files.png" width="35" height="35" alt="uploads" title="View your uploads"></a> <a href="/posts/view_updates"><img src="/images/pages.jpeg" width="35" height="35" alt="updates" title="View your updates"></a></p>
 <div class="container_12 standard centered">
 
 <table width="97%" border="1" cellspacing="1" cellpadding="1">
@@ -25,7 +23,7 @@
     <th>Created</th>
   </tr>
   <tr>
-    <td height="41"><?=$post['user_id']?></td>
+    <td><?=$post['user_id']?></td>
     <td><?=$post['upload_id']?></td>
     <td><?=$post['uploads']?></td>
     <td><?=$post['created']?></td>

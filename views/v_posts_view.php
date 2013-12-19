@@ -9,9 +9,7 @@
         	<div class="red"><h2>Secure Online Forms</h2></div>
 		<?php endif; ?>
         
-        <br />
-        
-        <p><a href="/posts/view_add"><img src="/public_html/images/icon.png" width="35" height="35" alt="Form" title="Application page 1"></a> <a href="/posts/view_add2"><img src="/public_html/images/icon.png" width="35" height="35" alt="Page 2" title="Application page 2"></a> <a href="/posts/view_uploads"><img src="/public_html/images/files.png" width="35" height="35" alt="uploads" title="View your uploads"></a> <a href="/posts/view_updates"><img src="/public_html/images/pages.jpeg" width="35" height="35" alt="updates" title="View your updates"></a></p>
+        <p><a href="/posts/view_add"><img src="/images/icon.png" width="35" height="35" alt="Form" title="Application page 1"></a> <a href="/posts/view_add2"><img src="/images/icon.png" width="35" height="35" alt="Page 2" title="Application page 2"></a> <a href="/posts/view_uploads"><img src="/images/files.png" width="35" height="35" alt="uploads" title="View your uploads"></a> <a href="/posts/view_updates"><img src="/images/pages.jpeg" width="35" height="35" alt="updates" title="View your updates"></a></p>
 
 	<div class="container_12 standard centered">
     <br />
@@ -136,7 +134,7 @@
   </tr>
 </table>
 
-<h3>Section II - Coast Guard Crednetials or Endorcement Type(s)<br />
+<h3>Section II - Coast Guard Crednetials or Endorcement Type(s)
 </h3>
 <table width="97%" border="1" cellspacing="1" cellpadding="1">
   <tr>
@@ -183,7 +181,7 @@
     <th>&nbsp;</th>
   </tr>
 </table>
-<br />
+
 <table width="97%" height="68" border="1" cellpadding="1" cellspacing="1">
   <tr>
     <th>Description of Endorcement(s):</strong></th>

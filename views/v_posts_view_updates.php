@@ -9,9 +9,8 @@
         	<div class="red"><h2>Secure Online Forms</h2></div>
 		<?php endif; ?>
         
-        <br />
         
-        <p><a href="/posts/view_add"><img src="/public_html/images/icon.png" width="35" height="35" alt="Form" title="Application page 1"></a> <a href="/posts/view_add2"><img src="/public_html/images/icon.png" width="35" height="35" alt="Page 2" title="Application page 2"></a> <a href="/posts/view_uploads"><img src="/public_html/images/files.png" width="35" height="35" alt="uploads" title="View your uploads"></a> <a href="/posts/view_updates"><img src="/public_html/images/pages.jpeg" width="35" height="35" alt="updates" title="View your updates"></a></p>
+        <p><a href="/posts/view_add"><img src="/images/icon.png" width="35" height="35" alt="Form" title="Application page 1"></a> <a href="/posts/view_add2"><img src="/images/icon.png" width="35" height="35" alt="Page 2" title="Application page 2"></a> <a href="/posts/view_uploads"><img src="/images/files.png" width="35" height="35" alt="uploads" title="View your uploads"></a> <a href="/posts/view_updates"><img src="/images/pages.jpeg" width="35" height="35" alt="updates" title="View your updates"></a></p>
 
 <div class="container_12 standard">
 
@@ -46,7 +45,7 @@
     <td><?=$post['alias']?></td>
     <td><?=$post['ref_num']?></td>
     <td><?=$post['arn']?></td>
-    <td><?=$post['birthDate']?></td>
+    <td><?=$post['nationality']?></td>
     <td><?=$post['eyes']?></td>
     <td><?=$post['hair']?></td>
   </tr>
@@ -69,7 +68,7 @@
     <td><?=$post['address']?></td>
     <td><?=$post['city']?></td>
     <td><?=$post['state']?></td>
-    <td><?=$post['zip']?></td>
+    <td><?=$post['zip_code']?></td>
     <td><?=$post['phone']?></td>
     <td><?=$post['phone_secondary']?></td>
     <td><?=$post['email']?></td>
@@ -87,7 +86,7 @@
     <th>Zip Code</th>
     </tr>
   <tr>
-    <td><?=$post['del_street']?></td>
+    <td><?=$post['del_address']?></td>
     <td><?=$post['del_city']?></td>
     <td><?=$post['del_state']?></td>
     <td><?=$post['del_zip']?></td>
@@ -99,22 +98,22 @@
     <th colspan="9">7a. Emergency Contact Information</th>
     </tr>
   <tr>
-    <th>Contact Name</th>
-    <th>Street</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip Code</th>
-    <th>Relationship</th>
-    <th>Phone</th>
-    <th>Cell</th>
-    <th>Email</th>
+    <th width="16%">Contact Name</th>
+    <th width="16%">Street</th>
+    <th width="12%">City</th>
+    <th width="9%">State</th>
+    <th width="9%">Zip Code</th>
+    <th width="11%">Relationship</th>
+    <th width="10%">Phone</th>
+    <th width="7%">Cell</th>
+    <th width="10%">Email</th>
     </tr>
   <tr>
     <td><?=$post['emerg_contact']?></td>
-    <td><?=$post['street']?></td>
-    <td><?=$post['city_emerg']?></td>
-    <td><?=$post['state_emerg']?></td>
-    <td><?=$post['zip_emerg']?></td>
+    <td><?=$post['emerg_street']?></td>
+    <td><?=$post['emerg_city']?></td>
+    <td><?=$post['emerg_state']?></td>
+    <td><?=$post['emerg_zip']?></td>
     <td><?=$post['relationship']?></td>
     <td><?=$post['emerg_phone']?></td>
     <td><?=$post['cell_phone']?></td>
@@ -128,7 +127,7 @@
     <th>Additional Comments</th>
   </tr>
   <tr>
-    <td><?=$post['comments']?></td>
+    <td height="111"><?=$post['comments']?></td>
   </tr>
 </table>
 

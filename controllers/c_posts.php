@@ -85,11 +85,11 @@ class posts_controller extends base_controller {
 			if ($_FILES['uploads']['error'] == 0)
 			{
 				# upload an image
-				$upload = Upload::upload($_FILES, "/uploads/", array("JPG", "JPEG", "jpg", "jpeg", "png", "PNG", "pdf", "PDF", "DOCS", "docs", "xls"), $this->user->user_id);
+				$uploads = Upload::upload($_FILES, "/uploads/", array("pdf", "PDF", "DOCS", "docs", "xls"), $this->user->user_id);
 	
-				if($upload == 'Invalid file type.') {
+				if($uploads == 'Invalid file type.') {
 					# return an error
-					Router::redirect("/users/profile/error"); 
+					Router::redirect("/posts/uploads/error"); 
 				}
 				else {
 					# process the upload
@@ -99,22 +99,22 @@ class posts_controller extends base_controller {
 					$_POST['created'] = Time::now();
 				
 					# Insert this user into the database
-                	$upload = DB::instance(DB_NAME)->insert('uploads', $_POST);
+                	$uploads = DB::instance(DB_NAME)->insert('uploads', $_POST);
 	
 					# resize the image
-					$imgObj = new Image($_SERVER["DOCUMENT_ROOT"] . '/uploads/' . $upload);
+					$imgObj = new Image($_SERVER["DOCUMENT_ROOT"] . '/uploads/' . $uploads);
 					$imgObj->resize(100,100, "crop");
-					$imgObj->save_image($_SERVER["DOCUMENT_ROOT"] . '/uploads/' . $upload); 
+					$imgObj->save_image($_SERVER["DOCUMENT_ROOT"] . '/uploads/' . $uploads); 
 				}
 			}
 			else
 			{
 				# return an error
-				Router::redirect("/users/profile/error");  
+				Router::redirect("/posts/uploads/error");  
 			}
 	
 			# Redirect back to the profile page
-			router::redirect('/users/profile'); 
+			router::redirect('/posts/uploads'); 
     	} 
 		
 		
@@ -151,7 +151,7 @@ class posts_controller extends base_controller {
 			
 		# Set up the View
     	$this->template->content = View::instance('v_posts_view');
-    	$this->template->title   = "Results";
+    	$this->template->title   = "View Page 1";
 		
 		# Associate this post with this user
         $_POST['user_id']  = $this->user->user_id;
@@ -177,7 +177,7 @@ class posts_controller extends base_controller {
 			
 		# Set up the View
     	$this->template->content = View::instance('v_posts_view_2');
-    	$this->template->title   = "Results";
+    	$this->template->title   = "View Page 2";
 		
 		# Associate this post with this user
         $_POST['user_id']  = $this->user->user_id;
@@ -203,7 +203,7 @@ class posts_controller extends base_controller {
 			
 		# Set up the View
     	$this->template->content = View::instance('v_posts_view_uploads');
-    	$this->template->title   = "Results";
+    	$this->template->title   = "View Uploads";
 		
 		# Associate this post with this user
         $_POST['user_id']  = $this->user->user_id;
@@ -211,7 +211,7 @@ class posts_controller extends base_controller {
 		# Build the query
     	$q = "SELECT 
             * 
-        FROM 719B
+        FROM uploads
         WHERE user_id = ".$this->user->user_id;
 
 		# Run the query
@@ -229,7 +229,7 @@ class posts_controller extends base_controller {
 			
 		# Set up the View
     	$this->template->content = View::instance('v_posts_view_updates');
-    	$this->template->title   = "Results";
+    	$this->template->title   = "View Updates";
 		
 		# Associate this post with this user
         $_POST['user_id']  = $this->user->user_id;
@@ -237,7 +237,7 @@ class posts_controller extends base_controller {
 		# Build the query
     	$q = "SELECT 
             * 
-        FROM 719B
+        FROM updates
         WHERE user_id = ".$this->user->user_id;
 
 		# Run the query
