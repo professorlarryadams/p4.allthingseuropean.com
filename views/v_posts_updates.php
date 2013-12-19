@@ -116,7 +116,7 @@
                       <div class="float_left" style="width:23%;">  
                         <strong>2b. Reference #</strong>:<br />
                         <span id="sprytextfield11">
-                        <input type="text" name="ref_num" id="ref_num" title="Please enter a reference number (if applicable)">
+                        <input type="text" name="ref_num" id="ref_num" title="Please enter a reference number (if applicable)"><br/>
                         <span class="textfieldInvalidFormatMsg">Invalid format.</span><br />
                         <span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded 11 characters.</span></span>
                      </div>
@@ -518,14 +518,14 @@
                         <div class="float_left" style="width:43%">
                           <span id="sprytextfield17"> 
                             <label for="del_address">Street:</label><br/>
-                            <input name="del_address" type="text" id="del_address" size="60" title="Secondary Address or P.O. Box">
+                            <input name="del_address" type="text" id="del_address" size="60" title="Secondary Address or P.O. Box"><br/>
                           <span class="textfieldMaxCharsMsg">Exceeded 30 characters.</span></span>
                         </div>
                         
                           <div class="float_left" style="width:24%">
                             <span id="sprytextfield18"> 
                             <label for="del_city">City:</label><br/>
-                            <input name="del_city" type="text" id="del_city" size="30" title="Enter your city">
+                            <input name="del_city" type="text" id="del_city" size="30" title="Enter your city"><br/>
                             <span class="textfieldMaxCharsMsg">Exceeded 30 characters.</span></span>
                         </div>
                         
@@ -591,7 +591,7 @@
                           <div class="float_left" style="width:15%"> 
                             <span id="sprytextfield19">
                             <label for="del_zip">Zip Code:</label><br/>
-                            <input name="del_zip" type="text" id="delivery_zip" size="20" title="Enter your zip code (12345).">
+                            <input name="del_zip" type="text" id="delivery_zip" size="20" title="Enter your zip code (12345)."><br/>
                             <span class="textfieldInvalidFormatMsg">Invalid format.</span></span>
                         </div>
                     </td>
@@ -609,7 +609,7 @@
                           <div class="float_left" style="width:25%"> 
                             <span id="sprytextfield21">
                             <label for="phone_secondary"><strong>6d. Secondary Phone:</strong></label><br/>
-                            <input type="text" name="phone_secondary" id="phone_secondary" title="Secondary phone or cell number - no spaces">
+                            <input type="text" name="phone_secondary" id="phone_secondary" title="Secondary phone or cell number - no spaces"><br/>
                             <span class="textfieldInvalidFormatMsg">Please enter a secondary phone number.</span></span>
                           </div>
                           
