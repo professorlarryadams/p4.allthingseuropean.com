@@ -28,9 +28,8 @@
 <div class="container_12">
 
 	<div class="header">
-    <img src="/images/header-1.jpg" width="960" height="202" alt="header_image"> </div>
-
-<div class="menu">
+    <img src="/images/header-1.jpg" width="960" height="202" alt="header_image">
+    <div class="menu">
 
                 <a href='/'>Home</a> | <a href="#">Contact</a> | 
 
@@ -50,11 +49,12 @@
                     <a href='/users/login'>Log in</a> |
         
                 <?php endif; ?>
-            </div>
-
+            </div> 
+    </div>
             <?php if(isset($content)) echo $content; ?>
             
-            
+     <div class="footer">
+     </div>       
     <!--container_12 --></div>
 
 </body>

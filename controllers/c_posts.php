@@ -69,42 +69,38 @@ class posts_controller extends base_controller {
 		
 		# Setup view
         $this->template->content = View::instance('v_posts_uploads');
-        $this->template->title   = "Uploading files and images";
+        $this->template->title   = "Uploading files";
 
         # Render template
         echo $this->template;
 	
 	}		
 
-		 public function p_uploads() {
+	public function p_uploads($error = NULL) {
 			 
 		# Associate this post with this user
         $_POST['user_id']  = $this->user->user_id;
 			
 			# if user specified a new image file, upload it
-			if ($_FILES['uploads']['error'] == 0)
+			if ($_FILES['files']['error'] == 0)
 			{
 				# upload an image
-				$uploads = Upload::upload($_FILES, "/uploads/", array("pdf", "PDF", "DOCS", "docs", "xls"), $this->user->user_id);
+				$uploads = Upload::upload($_FILES, "/uploads/", array("pdf", "PDF"), $this->user->user_id);
 	
-				if($uploads == 'Invalid file type.') {
+				if($uploads == 'invalid-file-type.') {
 					# return an error
 					Router::redirect("/posts/uploads/error"); 
 				}
 				else {
 					# process the upload
-					$data = Array("uploads" => $uploads);
+					$data = Array("files" => $files);
 					DB::instance(DB_NAME)->update("uploads", $data, "WHERE user_id = ".$this->user->user_id);
 					
 					$_POST['created'] = Time::now();
+					$_POST['modified'] = Time::now();
 				
 					# Insert this user into the database
-                	$uploads = DB::instance(DB_NAME)->insert('uploads', $_POST);
-	
-					# resize the image
-					$imgObj = new Image($_SERVER["DOCUMENT_ROOT"] . '/uploads/' . $uploads);
-					$imgObj->resize(100,100, "crop");
-					$imgObj->save_image($_SERVER["DOCUMENT_ROOT"] . '/uploads/' . $uploads); 
+                	$files = DB::instance(DB_NAME)->insert('uploads', $_POST);
 				}
 			}
 			else
@@ -115,7 +111,8 @@ class posts_controller extends base_controller {
 	
 			# Redirect back to the profile page
 			router::redirect('/posts/uploads'); 
-    	} 
+    	}   
+			                          
 		
 		
 		public function updates() {

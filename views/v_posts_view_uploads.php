@@ -9,7 +9,8 @@
         	<div class="red"><h2>Secure Online Forms</h2></div>
 		<?php endif; ?>
         
-        <p><a href="/posts/view_add"><img src="/images/icon.png" width="35" height="35" alt="Form" title="Application page 1"></a> <a href="/posts/view_add2"><img src="/images/icon.png" width="35" height="35" alt="Page 2" title="Application page 2"></a> <a href="/posts/view_uploads"><img src="/images/files.png" width="35" height="35" alt="uploads" title="View your uploads"></a> <a href="/posts/view_updates"><img src="/images/pages.jpeg" width="35" height="35" alt="updates" title="View your updates"></a></p>
+        <div><a href="/posts/view_add"><img src="/images/home.png" width="35" height="35" alt="Form" title="Application page 1"></a> <a href="/posts/view_add"><img src="/images/icon.png" width="35" height="35" alt="Form" title="Application page 1"></a> <a href="/posts/view_add2"><img src="/images/icon.png" width="35" height="35" alt="Page 2" title="Application page 2"></a> <a href="/posts/view_uploads"><img src="/images/files.png" width="35" height="35" alt="uploads" title="View your uploads"></a> <a href="/posts/view_updates"><img src="/images/pages.jpeg" width="35" height="35" alt="updates" title="View your updates"></a></div>
+        <div>Navigation Menu</div>
 <div class="container_12 standard centered">
 
 <table width="97%" border="1" cellspacing="1" cellpadding="1">

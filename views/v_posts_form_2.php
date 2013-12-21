@@ -11,7 +11,7 @@
 <link href="/js/SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css">
 <link href="/js/SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css">
 <link href="/js/SpryAssets/SpryValidationCheckbox.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<link href="/css/jquery-ui.css" rel="stylesheet" type="text/css">
 
 
 <!-- JS -->
@@ -20,8 +20,8 @@
 <script src="/js/SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
 <script src="/js/SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
 <script src="/js/SpryAssets/SpryValidationCheckbox.js" type="text/javascript"></script>
-<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="/js/jquery-1.9.1.js"></script>
+<script src="/js/jquery-ui.js"></script>
 
 
 <script>
@@ -37,13 +37,14 @@
 <div class="container_12 standard">
 <br /> 
 		
-		<div class="centered"><?php if($user): ?>
-        	<div class="red"><h4>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h4>
-        
-        	<p> Welcome to the Merchant Mariner Credential Secure Electronic Application System (MMSEAS)</p></div>
-		<?php else: ?>
-        	<div class="red"><h2>Secure Online Forms</h2></div>
-		<?php endif; ?></div>
+        <div class="centered red">
+			<?php if($user): ?>
+        		<h3>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h3>
+        		<p>Please complete the required fields on this form.</p>
+			<?php else: ?>
+        		<h3>Secure Online Forms</h3>
+			<?php endif; ?>
+            </div>
   
   <form name="719B" id="myform" method="post" action="/posts/p_add2">
    		  
@@ -68,7 +69,7 @@
 	        </tr>
    		    <tr>
    		      <td colspan="2" >
-              <div><strong>1. Transportation Worker's Identification Credential (TWIC)</strong></div>
+              <div><strong>1. Transportation Worker's Identification Credential (TWIC):</strong></div>
                 
                   <div class="float_left"><label>
                     <input type="checkbox" name="twic_receipt" value="yes" id="twic_0" title="Provide a receipt of your TWIC">
@@ -86,27 +87,25 @@
 	        </tr>
    	
    		    <tr class="clear">
-   		      <td colspan="2" >
-              <div><strong>2. Mariner Outreach System (MOS)</strong> (Optional): I consent to voluntary participation in the Mariner Outreach System to be used by the Maritime Administration (MARAD) in the event of a national emergency or sealift crisis. In such an emergency, MARAD would disseminate my contact information to an appropriate maritime employment office to determine my availability for possible employment on a sealift vessel. Once consent is given, it remains effective until revoked either by subsequent application or by sending a signed notice of revocation to the U.S. Coast Guard National Maritime Center, 100
-Forbes Dr., Martinsburg, WV 25404. For more information on MOS, please visit https://mos.marad.dot.gov/</div><br />
-
+   		      <td colspan="2"><strong>2. Mariner Outreach System (MOS)</strong> (Optional): I consent to voluntary participation in the Mariner Outreach System to be used by the Maritime Administration (MARAD) in the event of a national emergency or sealift crisis. In such an emergency, MARAD would disseminate my contact information to an appropriate maritime employment office to determine my availability for possible employment on a sealift vessel. Once consent is given, it remains effective until revoked either by subsequent application or by sending a signed notice of revocation to the U.S. Coast Guard National Maritime Center, 100 Forbes Dr., Martinsburg, WV 25404. For more information on MOS, please visit https://mos.marad.dot.gov/.<br />
+              
               
                 <div class="float_left"><label>
                   <input type="checkbox" name="mos_yes" value="yes" id="mos_0">
-                  Yes, I would like to participate.</label> 
+                  <strong>Yes, I would like to participate.</strong></label> 
                 </div>
                
                 <div class="float_right"> <label>
                   <input type="checkbox" name="mos_no" value="no" id="mos_1">
-                  No thanks, I do not wish to participate at this time.</label>
-               
+                  <strong>No thanks, I do not wish to participate at this time.</strong></label>
               </div>
 	         
               </td>
-	        </tr>
-	      <tr class="clear">
+	       </tr>
+	      
+          <tr class="clear">
    		      <td colspan="2" >
-              <div><strong>3. I have been a user of/or addicted to a dangerous drug, including marijuana, within the last 10 years.</strong></div>
+              <div><strong>3. I have been a user of/or addicted to a dangerous drug, including marijuana, within the last 10 years:</strong></div><br />
                 
                  <div class="float_left">
                    <span id="spryselect2">
@@ -115,42 +114,40 @@ Forbes Dr., Martinsburg, WV 25404. For more information on MOS, please visit htt
                      <option value="no">No</option>
                      <option value="yes">Yes</option>
                    </select>
-                <span class="selectRequiredMsg">Please select an item.</span></span> </div>
+                <span class="selectRequiredMsg">Please select an item.</span></span></div>
 	         
               </td>
 	        </tr>
    		    
             <tr class="clear">
-   		      <td colspan="2" ><strong>4. I have attached a signed statement of explanation for all convictions not previously disclosed</strong> to the Coast Guard on a prior  Merchant Mariner Credential Application. Per 46 CFR Part 10,  conviction means  found guilty by judgment or  by plea  and  includes cases of deferred adjudication  (no  contest, adjudication withheld, etc.) or  where the court required you to attend classes, make contribution of  time or money, receive treatment, submit to any manner  or probation or supervision, or  forgo appeal of a trial court finding.  Expunged convictions must be reported unless the expungement was based upon a showing  that  the court's earlier conviction was in error.<br />
+   		      <td colspan="2"><strong>4. I have attached a signed statement of explanation for all convictions not previously disclosed</strong> to the Coast Guard on a prior  Merchant Mariner Credential Application. Per 46 CFR Part 10,  conviction means  found guilty by judgment or  by plea  and  includes cases of deferred adjudication  (no  contest, adjudication withheld, etc.) or  where the court required you to attend classes, make contribution of  time or money, receive treatment, submit to any manner  or probation or supervision, or  forgo appeal of a trial court finding.  Expunged convictions must be reported unless the expungement was based upon a showing  that  the court's earlier conviction was in error.<br />
                 
                 <div class="float_left"><input name="convictions_statement" id="convictions_statement" type="checkbox" value="yes" title="You can upload your conviction statement"> 
-                Yes</div>
+                <strong>Yes</strong></div>
 	         
               </td>
 	        </tr>
    		    
             <tr class="clear">
-   		      <td colspan="2" ><strong>5. National Driver Registry (NDR) (Mandatory for Original, Renewal, or new Officer Endorsement):</strong>
-              <div><input name="ndr_authorize" id="ndr_authorize" type="checkbox" value="yes"> 
-              I authorize the National Driver Registry to furnish the U.S. Coast Guard (USCG) information pertaining to my driving record. This consent constitutes authorization for a single access to the information contained in the NDR to verify information provided in this application <strong>NOTE: Not required for Document of Continuity applicants.</strong></div><br />
-              <div>* I understand the USCG will make the information received from the NDR available to me for review and written comment prior to disapproving my
-application or taking any action against my Merchant Mariner’s Credential. Authority: 46 U.S.C. 7101(g), 46 U.S.C. 7302(c), and 46 U.S.C 7505.</div>
+   		      <td colspan="2"><div><strong>5. National Driver Registry (NDR) (Mandatory for Original, Renewal, or new Officer Endorsement):</strong></div>
+              <div><input name="ndr_authorize" id="ndr_authorize" type="checkbox" value="yes">I authorize the National Driver Registry to furnish the U.S. Coast Guard (USCG) information pertaining to my driving record. This consent constitutes authorization for a single access to the information contained in the NDR to verify information provided in this application.</div> 
+              <br />
+              <div><strong>NOTE: Not required for Document of Continuity applicants.</strong> * I understand the USCG will make the information received from the NDR available to me for review and written comment prior to disapproving my application or taking any action against my Merchant Mariner’s Credential. Authority: 46 U.S.C. 7101(g), 46 U.S.C. 7302(c), and 46 U.S.C 7505.</div><br />
 
             </td>
 	        </tr>
    		    
             <tr class="clear">
    		      <td colspan="2" >
-                 <div><strong>6. Document of Continuity</strong></div>
+                 <div><strong>6. Document of Continuity:</strong></div>
                 <div class="float_left"><input name="continuity" type="checkbox" value="yes" title="You may not work under a Document of Continuity"> I understand that a Document of Continuity is not valid for use in accordance with 46 CFR 10.227(e)(2)(ii) and aware of the requirements to obtain an MMC.
                 </div> 
               </td>
 	        </tr>
    		    
             <tr class="clear">
-   		     
               <td colspan="2" >
-                 <strong>7.  I am under 18 years of age and a notarized statement of parental/guardian consent is attached.</strong>
+                 <div><strong>7.  I am under 18 years of age and a notarized statement of parental/guardian consent is attached:</strong></div>
                  <div class="float-left"><input name="parental_consent" type="checkbox" value="yes" title="You must provided a Notarized Statement from your parents"></div>
 
               </td>
@@ -158,17 +155,17 @@ application or taking any action against my Merchant Mariner’s Credential. Aut
    		    
             <tr class="clear">
    		      
-              <tD colspan="2"><strong>8. Third Party Authorization (optional)</strong><br />
+              <tD colspan="2"><div><strong>8. Third Party Authorization (optional):</strong></div><br />
               <strong>*</strong> By checking  the following boxes, I am authorizing release of  information to the third  party  as  indicated below.   If a selection is made, please provide  the Name of  the Organization or  Third  Party, Address, and Phone Number. Additional Third Party release information can be attached separately.</tD>
 	        </tr>
    		   
    		    <tr>
             <td style="width:49%">8a. <input name="sse_authorize" type="checkbox" value="yes" title="3rd Party will only have access to Safety & Suitability records"> 
-            Safety and Suitability
+            Safety and Suitability:
             </td>
             
             <td style="width:49%"><span id="sprytextfield1">
-              <label for="3rdPartyName">Name of Organization or Third Party</label><br />
+              <label for="3rdPartyName">Name of Organization or Third Party:</label><br />
               <input type="text" name="3rdPartyName" id="3rdPartyName" size="70" title="3rd Party can be a person or company."><br />
 </span>
               </td>
@@ -179,23 +176,23 @@ application or taking any action against my Merchant Mariner’s Credential. Aut
             </td>
             <td>
               <span id="sprytextfield2">
-              <label for="3rdPartyPOC">Organization Point of Contact (if applicable)</label><br />
+              <label for="3rdPartyPOC">Organization Point of Contact (if applicable):</label><br />
               <input type="text" name="3rdPartyPOC" id="3rdPartyPOC" size="70" title="Name of contact must be provided"><br />
 </span></td>
             </tr>
    		   
    		    <tr>
-            <td>8c. <input name="pq_authorize" type="checkbox" value="yes" title="3rd Party may only view professional records"> Professional qualifications, certification records, or Sea Service
+            <td>8c. <input name="pq_authorize" type="checkbox" value="yes" title="3rd Party may only view professional records"> Professional qualifications, certification records, or Sea Service:
             </td>
             <td>
               <span id="sprytextfield3">
-              <label for="3rdPartyStreet">Address</label><br />
+              <label for="3rdPartyStreet">Address:</label><br />
               <input type="text" name="3rdPartyStreet" id="3rdPartyStreet" size="70" title="Physical address must be provided"><br />
               </span></td>
             </tr>
    		   
    		    <tr>
-            <td>8d. <input name="delivery_authorize" type="checkbox" value="yes" title="Credential will be provide to your 3rd Party"> Merchant Marine Credential Delivery
+            <td>8d. <input name="delivery_authorize" type="checkbox" value="yes" title="Credential will be provide to your 3rd Party"> Merchant Marine Credential Delivery:
             </td>
             <td>
             <div class="float_left" style="width:50%">
@@ -207,7 +204,7 @@ application or taking any action against my Merchant Mariner’s Credential. Aut
             
             <div class="float_left" style="width:15%">
               <span id="spryselect1">
-              <label for="3rdPartyState">State</label><br />
+              <label for="3rdPartyState">State:</label><br />
               <select name="3rdPartyState" id="3rdPartyState" title="Please enter 3rd Party State">
               <option value="" selected="selected">State</option>
                     <option value="AL">AL</option>
@@ -267,7 +264,7 @@ application or taking any action against my Merchant Mariner’s Credential. Aut
 			
             <div class="float_left" style="width:33%">
               <span id="sprytextfield6">
-              <label for="3rdPartyZip">Zip Code</label><br />
+              <label for="3rdPartyZip">Zip Code:</label><br />
               <input type="text" name="3rdPartyZip" id="3rdPartyZip" title="Please enter 3rd Party zip code">
               </span>
             </div>
@@ -275,11 +272,11 @@ application or taking any action against my Merchant Mariner’s Credential. Aut
             </tr>
    		   
    		    <tr>
-            <td>8e. <input name="processing_authorize" type="checkbox" value="yes" title="3rd Party will act on your behalf"> Act on my behalf in all matters pertaining to the processing of my current USCG credential application.
+            <td>8e. <input name="processing_authorize" type="checkbox" value="yes" title="3rd Party will act on your behalf"> Act on my behalf in all matters pertaining to the processing of my current USCG credential application:
             </td>
             <td>
               <span id="sprytextfield7">
-              <label for="3rdPartyPhone">Phone</label>
+              <label for="3rdPartyPhone">Phone:</label>
               <br />
               <input type="text" name="3rdPartyPhone" id="3rdPartyPhone" size="70" title="Please enter 3rd Party primary phone number.">
               <br />
@@ -289,21 +286,20 @@ application or taking any action against my Merchant Mariner’s Credential. Aut
    		   
    		    <tr>
             <td colspan="2">
-            <div><strong>9. Certification</strong></div>
-            <p>
-            Whoever, in any manner within the jurisdiction of any department or agency of the United States, knowingly and willfully falsifies, conceals or covers up by any trick, scheme, or device a material fact, or makes any false, fictitious or fraudulent statements or representations, or makes or uses any false writing or document knowing the same to contain any false, fictitious or fraudulent statement or entry, violates the U.S. Criminal Code at Title 18 U.S.C. 1001 which subjects the violator to Federal prosecution and possible incarceration, fine or both.</p>
+            <div><strong>9. Certification:</strong></div>
+            <div>Whoever, in any manner within the jurisdiction of any department or agency of the United States, knowingly and willfully falsifies, conceals or covers up by any trick, scheme, or device a material fact, or makes any false, fictitious or fraudulent statements or representations, or makes or uses any false writing or document knowing the same to contain any false, fictitious or fraudulent statement or entry, violates the U.S. Criminal Code at Title 18 U.S.C. 1001 which subjects the violator to Federal prosecution and possible incarceration, fine or both.</div>
             
             </td>
             </tr>
   		<tr>
-   		      <td colspan="2" ><div><strong>10. Oath</strong> (Mandatory for Original Only):</div>
-   		        <div class="float-left"><input name="oath" type="checkbox" value="yes"></div>
+   		      <td colspan="2" ><strong>10. Oath</strong> (Mandatory for Original Only):
+   		        <div class="float-left"><input name="oath" type="checkbox" value="yes">Yes, I have met this requirement.</div>
 		    </td>
         </tr>    
                		    
           <tr class="clear">
    		      <td colspan="2" >
-              	<div><strong>11. Applicant’s Signature</strong></div><br />
+              	<div><strong>11. Applicant’s e-Signature:</strong></div><br />
                 
                 <div class="float_left" style="width:70%">
 					<span id="sprytextfield5">

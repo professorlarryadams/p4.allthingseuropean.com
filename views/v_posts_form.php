@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>Online Form</title>
+<title>Application Page 1</title>
 
 <!-- CSS -->
 
@@ -24,8 +24,8 @@
     <script src="/js/SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
 	<script src="/js/SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
     <script src="/js/SpryAssets/SpryValidationCheckbox.js" type="text/javascript"></script>
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script> 
+    <script src="/js/jquery-1.9.1.js"></script>
+    <script src="/js/jquery-ui.js"></script> 
 
  
   <script>
@@ -48,12 +48,12 @@
     
     <br />
  
-			<div class="centered">
+			<div class="centered red">
 			<?php if($user): ?>
-        		<div class="red"><h4>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h4>
-        		<p> Welcome to the Merchant Mariner Credential Secure Electronic Application System (MMSEAS)</p></div>
+        		<h3>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h3>
+        		<p>Please complete the required fields on this form.</p>
 			<?php else: ?>
-        		<div class="red"><h2>Secure Online Forms</h2></div>
+        		<h3>Secure Online Forms</h3>
 			<?php endif; ?>
             </div>
    
@@ -165,7 +165,7 @@
    		      <td colspan="7">
                   <div class="float_left" style="width:32%">
                   <span id="spryselect2">
-   		        <label><strong>4. Citizenship/Nationality:&nbsp;</strong></label> <br/>
+   		        <label><strong>4. Citizenship/Nationality:</strong></label> <br/>
    		          <select name="nationality" id="nationality" title="What is your nationality?">
                     <option value="" selected="selected">Select a Country</option>
                     <option value="United States">United States</option>
@@ -416,71 +416,18 @@
         <div class="float_left" style="width:21%">  
                 <span id="sprytextfield8">
                 <label><strong>5a. Birth City:</strong><br />
-                  <input type="text" name="birthCity" id="birthCity" title="Enter a city where you were born." size="24">
+                  <input type="text" name="birthCity" id="birthCity" title="Enter a city where you were born." size="18">
                 </label>
                 <br/>
                 <span class="textfieldRequiredMsg">Please enter your birth city.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded 30 characters.</span></span> 
                 </div>
                 
-                  <div class="float_left" style="width:15.5%">  
-                  <span id="spryselect6">
-   		        <label><strong>5b. Birth State:</strong></label><br/>
-   		          <select name="birthState" id="birthState" title="Select the state you where born in?">
-                    <option value="" selected="selected">Select a State</option>
-                    <option value="AL">Alabama</option>
-                    <option value="AK">Alaska</option>
-                    <option value="AZ">Arizona</option>
-                    <option value="AR">Arkansas</option>
-                    <option value="CA">California</option>
-                    <option value="CO">Colorado</option>
-                    <option value="CT">Connecticut</option>
-                    <option value="DE">Delaware</option>
-                    <option value="DC">Dist. Of Columbia</option>
-                    <option value="FL">Florida</option>
-                    <option value="GA">Georgia</option>
-                    <option value="HI">Hawaii</option>
-                    <option value="ID">Idaho</option>
-                    <option value="IL">Illinois</option>
-                    <option value="IN">Indiana</option>
-                    <option value="IA">Iowa</option>
-                    <option value="KS">Kansas</option>
-                    <option value="KY">Kentucky</option>
-                    <option value="LA">Louisiana</option>
-                    <option value="ME">Maine</option>
-                    <option value="MD">Maryland</option>
-                    <option value="MA">Massachusetts</option>
-                    <option value="MI">Michigan</option>
-                    <option value="MN">Minnesota</option>
-                    <option value="MS">Mississippi</option>
-                    <option value="MO">Missouri</option>
-                    <option value="MT">Montana</option>
-                    <option value="NE">Nebraska</option>
-                    <option value="NV">Nevada</option>
-                    <option value="NH">New Hampshire</option>
-                    <option value="NJ">New Jersey</option>
-                    <option value="NM">New Mexico</option>
-                    <option value="NY">New York</option>
-                    <option value="NC">North Carolina</option>
-                    <option value="ND">North Dakota</option>
-                    <option value="OH">Ohio</option>
-                    <option value="OK">Oklahoma</option>
-                    <option value="OR">Oregon</option>
-                    <option value="PA">Pennsylvania</option>
-                    <option value="RI">Rhode Island</option>
-                    <option value="SC">South Carolina</option>
-                    <option value="SD">South Dakota</option>
-                    <option value="TN">Tennessee</option>
-                    <option value="TX">Texas</option>
-                    <option value="UT">Utah</option>
-                    <option value="VT">Vermont</option>
-                    <option value="VA">Virginia</option>
-                    <option value="WA">Washington</option>
-                    <option value="WV">West Virginia</option>
-                    <option value="WI">Wisconsin</option>
-                    <option value="WY">Wyoming</option>
-                    </select><br/>
- 		          <span class="selectRequiredMsg">Please select the state.</span></span> 
-                </div>
+                  <div class="float_left" style="width:15%">  
+                    <span id="sprytextfield13">
+                    <label for="birthState"><strong>Birth State:</strong></label>
+                    <input name="birthState" type="text" id="birthState" size="18" title="Please enter your State where you where born.">
+                    <br />
+                <span class="textfieldRequiredMsg">A value is required.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span><span class="textfieldMaxCharsMsg">Exceeded maximum number of characters.</span></span> </div>
                 
                   <div class="float_left" style="width:31%">  
                 <span id="spryselect7">
@@ -737,7 +684,6 @@
    		    
         <tr class="clear">
    		      <td colspan="7" >
-              
                  <div class="float_left" style="width:35%">
            		   <span id="spryselect8">
    		        		<label for="eyes"><strong>5d. Color of Eyes</strong>:</label>
@@ -769,14 +715,13 @@
 	          	<span class="selectRequiredMsg">Please select an item.</span></span></div> </td>
 	        </tr>
    		    
-        <tr>
-   		      <th colspan="7" >Mariner Information:  (Click here for further instructions)</th>
+        <tr class="clear">
+   		      <th colspan="7">Mariner Information:  (Click here for further instructions)</th>
 	        </tr>
    		    
         <tr>
    		      <td colspan="7" >
               <div><strong>6a. Home Address (PO Box NOT acceptable):</strong></div>
-                  
                   <div class="float_left" style="width:43%"> 
                   <span id="sprytextfield14">
                   <label for="address">Street Address:</label>
@@ -868,24 +813,24 @@
    		      <td colspan="7" >
               <div><strong>6b. Delivery Address, if different:</strong> <strong>(PO BOX acceptable):</strong></div>
                  
-                <div class="float_left" style="width:43%">
+        <div class="float_left" style="width:43%">
                   <span id="sprytextfield17"> 
    		        	<label for="del_street">Street:</label><br/>
                     <input name="del_street" type="text" id="del_street" size="60" title="Secondary Address or P.O. Box">
                   <span class="textfieldMaxCharsMsg">Exceeded 30 characters.</span></span>
                 </div>
                 
-                  <div class="float_left" style="width:24%">
+        <div class="float_left" style="width:24%">
                   	<span id="sprytextfield18"> 
 	          		<label for="del_city">City:</label><br/>
                     <input name="del_city" type="text" id="del_city" size="30" title="Enter your city">
                     <span class="textfieldMaxCharsMsg">Exceeded 30 characters.</span></span>
-                </div>
+         </div>
                 
-                  <div class="float_left" style="width:15%"> 
+        <div class="float_left" style="width:15%"> 
                     <span id="spryselect1">
                     <label for="del_state">State:</label>
-                    <br />
+                    
                     <select name="del_state" id="del_state">
                     <option value="" selected="selected">Select a State</option>
                     <option value="AL">Alabama</option>
@@ -940,16 +885,16 @@
                     <option value="WI">Wisconsin</option>
                     <option value="WY">Wyoming</option>
                   	</select><br />
-                    </span> </div>
+                    </span></div>
                  
-                  <div class="float_left" style="width:15%"> 
+        <div class="float_left" style="width:15%"> 
               		<span id="sprytextfield19">
 	          		<label for="del_zip">Zip Code:</label><br/>
               		<input name="del_zip" type="text" id="del_zip" size="20" title="Enter your zip code (12345).">
               		<span class="textfieldInvalidFormatMsg">Invalid format.</span></span>
            	    </div>
             </td>
-	        </tr>
+	    </tr>
    		    
         <tr class="clear">
    		      <td colspan="7" >
@@ -974,7 +919,7 @@
               		<span class="textfieldRequiredMsg">Please enter your email.</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span>
               	  </div>
               </td>
-	        </tr>
+	    </tr>
    		    
         <tr class="clear">
    		      <th colspan="7" ><strong>Emergency Contact</strong></th>
@@ -1133,12 +1078,12 @@
         <tr>
         
            <th><strong>Officer:</strong></th>       
-            <td style="text-align:center"><input type="checkbox" id="check0" name="original_officer" 	value="yes" class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check1" name="renewal_officer" 	value="yes" class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check2" name="duplicate_officer" 	value="yes" class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check3" name="raise_officer" 		value="yes" class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check4" name="increase_officer" 	value="yese" class="require-one" /></td>
-            <td style="text-align:center"><input type="checkbox" id="check5" name="continuity_officer" 	value="yesr" class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check0" name="original_officer" 	value="yes" 	class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check1" name="renewal_officer" 	value="yes" 	class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check2" name="duplicate_officer" 	value="yes" 	class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check3" name="raise_officer" 		value="yes" 	class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check4" name="increase_officer" 	value="yese" 	class="require-one" /></td>
+            <td style="text-align:center"><input type="checkbox" id="check5" name="continuity_officer" 	value="yesr" 	class="require-one" /></td>
               
         </tr>  
                         
@@ -1156,18 +1101,16 @@
            <th><strong>Entry Level:</strong></th>        
            <td style="text-align:center"><input type="checkbox" id="check12" name="original_entry" 		value="yes" 	class="require-one" /></td>
            <td style="text-align:center"><input type="checkbox" id="check13" name="renewal_entry" 		value="yes" 	class="require-one" /></td>
-           <td style="text-align:center"><input type="checkbox" id="check14" name="duplicate_entry" 	value="yes" class="require-one" /></td> 
-           <td style="background-color:#bbb">&nbsp;</td> 
-           <td style="background-color:#bbb">&nbsp;</td> 
-           <td style="background-color:#bbb">&nbsp;</td> 
-        </tr>
+           <td style="text-align:center"><input type="checkbox" id="check14" name="duplicate_entry" 	value="yes" 	class="require-one" /></td> 
+           <td colspan="3" style="background-color:#bbb">&nbsp;</td> 
+          </tr>
         
         <tr>
               <th><strong>STCW:</strong></th>
               <td style="text-align:center"><input type="checkbox" id="check15" name="original_stcw" 	value="yes" 	class="require-one" /></td>
               <td style="text-align:center"><input type="checkbox" id="check16" name="renewal_stcw" 	value="yes" 	class="require-one" /></td>
               <td style="text-align:center"><input type="checkbox" id="check17" name="duplicate_stcw" 	value="yes" 	class="require-one" /></td>
-              <td style="text-align:center"><input type="checkbox" id="check18" name="raise_stcw" 		value="yes" 		class="require-one" /></td>
+              <td style="text-align:center"><input type="checkbox" id="check18" name="raise_stcw" 		value="yes" 	class="require-one" /></td>
               <td style="text-align:center"><input type="checkbox" id="check19" name="increase_stcw" 	value="yes" 	class="require-one" /></td> 
               <td style="background-color:#bbb">&nbsp;</td> 
         
@@ -1186,11 +1129,11 @@
         </tr>
    		    
         <tr>
-   		      <td colspan="7" ><strong><span id="sprycheckbox1">
+   		      <td colspan="7" ><span id="sprycheckbox1">
               <input type="checkbox" name="renewal_transaction" id="renewal_transaction" value="yes" title="Renewal transaction only!">
-              <label for="renewal_transaction"></label>
+              <label for="renewal_transaction"><strong>FOR RENEWAL TRANSACTIONS ONLY:</strong><br />I request to have my merchant mariner credential (MMC) issued immediately and decline having its issuance coincide with my previous credentials expiration date.</label>
               <span class="checkboxMinSelectionsMsg">Minimum number of selections not met.</span><span class="checkboxMaxSelectionsMsg">Maximum number of selections exceeded.</span></span>
-              FOR RENEWAL TRANSACTIONS ONLY:</strong> I request to have my merchant mariner credential (MMC) issued immediately and decline having its issuance coincide with my previous credentials expiration date.             
+                  
               </td>
 	    </tr>
             		    
@@ -1233,7 +1176,6 @@ var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4", "none
 var sprytextfield6 = new Spry.Widget.ValidationTextField("sprytextfield6", "integer", {isRequired:false, hint:"numbers only", maxChars:11});
 var spryselect2 = new Spry.Widget.ValidationSelect("spryselect2");
 var sprytextfield8 = new Spry.Widget.ValidationTextField("sprytextfield8", "none", {minChars:1, maxChars:30, hint:"City"});
-var spryselect6 = new Spry.Widget.ValidationSelect("spryselect6");
 var spryselect7 = new Spry.Widget.ValidationSelect("spryselect7");
 var spryselect8 = new Spry.Widget.ValidationSelect("spryselect8");
 var spryselect9 = new Spry.Widget.ValidationSelect("spryselect9");
@@ -1246,6 +1188,7 @@ var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {isRequired:fa
 var sprytextarea2 = new Spry.Widget.ValidationTextarea("sprytextarea2", {minChars:10, maxChars:400, hint:"You must enter your description in this box!"});
 var sprytextfield12 = new Spry.Widget.ValidationTextField("sprytextfield12", "none", {minChars:1, maxChars:40, hint:"Street"});
 var sprytextfield7 = new Spry.Widget.ValidationTextField("sprytextfield7", "date", {hint:"mm/dd/yyyy", useCharacterMasking:true, format:"mm/dd/yyyy", minValue:1});
+var sprytextfield13 = new Spry.Widget.ValidationTextField("sprytextfield13", "none", {minChars:1, maxChars:30, hint:"State"});
 </script>
 </body>
 </html>

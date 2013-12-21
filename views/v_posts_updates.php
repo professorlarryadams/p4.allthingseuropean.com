@@ -18,12 +18,11 @@
     <script src="/js/SpryValidationTextField.js" type="text/javascript"></script>
 	<script src="/js/jquery-1.4.4.min.js" type="text/javascript"></script>
     <script src="/js/SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="/js/jquery-1.9.1.js"></script>
+    <script src="/js/jquery-ui.js"></script>
     <script src="/js/SpryValidationTextarea.js" type="text/javascript"></script>
-     
-		
-		<script>
+     	
+<script>
   $(function() {
     $( document ).tooltip();
   });
@@ -33,28 +32,26 @@
 <!-- Body -->
 
 <body>
-
 <div class="container_12 standard"> 
     
-    <br />     
-	
-		<div class="centered red">
-		<?php if($user): ?>
-        	<h4>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h4>
-        
-        	<p>Welcome to the Merchant Mariner Credential Secure Electronic Application System (MMSEAS)</p>
-		<?php else: ?>
-        	<h2>Secure Online Forms</h2>
-		<?php endif; ?>
-        </div>
+    <br /> 
+    
+    <div class="centered red">
+			<?php if($user): ?>
+        		<h3>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h3>
+        		<p>Please complete the required fields to update your contact information.</p>
+			<?php else: ?>
+        		<h3>Secure Online Forms</h3>
+			<?php endif; ?>
+            </div>    
 
   	<form  action="/posts/add_updates" method="post" enctype="multipart/form-data" id="myform">
    		  
-   		<table>
+   		<table width="97%" border="1" cellspacing="1" cellpadding="1">
                 <tr>
                     <td style="text-align:center">
                         <div>
-                          <h2><strong>UPDATING CONTACT INFORMATION</strong></h2>
+                          <h3><strong>UPDATING CONTACT INFORMATION</strong></h3>
                         </div>
                    </td>
                 </tr>
@@ -131,7 +128,7 @@
                        
                        <div class="float_left" style="width:32%">
                           <span id="spryselect2">
-                        <label><strong>4. Citizenship/Nationality:&nbsp;</strong></label> <br/>
+                        <label><strong>4. Citizenship/Nationality:</strong></label> <br/>
                           <select name="nationality" id="nationality" title="What is your nationality?">
                             <option value="" selected="selected">Select a Country</option>
                             <option value="United States">United States</option>
@@ -417,7 +414,7 @@
                     </tr>
                     
                 <tr>
-                      <th >Mariner Information:  </th>
+                      <th >Mariner Information:</th>
                     </tr>
                     
                 <tr>
@@ -595,7 +592,7 @@
                             <span class="textfieldInvalidFormatMsg">Invalid format.</span></span>
                         </div>
                     </td>
-                    </tr>
+                </tr>
                     
                 <tr class="clear">
                       <td >
@@ -624,10 +621,10 @@
                     
                 <tr class="clear">
                       <th ><strong>Emergency Contact</strong></th>
-                    </tr>
+                </tr>
                     
                 <tr>
-                      <td >
+                      <td>
                       <strong>7a. Emergency Contact name and address:</strong>
         
                         <div class="float_left" style="width:100%">
@@ -769,10 +766,6 @@
                   <textarea name="comments" id="comments" cols="125" rows="5" title="Enter description of your request here."></textarea><br />
                   <span class="textareaRequiredMsg">A value is required.</span><span class="textareaMaxCharsMsg">Exceeded maximum number of characters.</span></span></td>
                 </tr>
-                
-                <tr class="clear">
-                  <th style="height:25px; vertical-align:central">&nbsp;</th>
-                </tr>  
                                 
                 <tr>
                       <td style="background-color:#000;"><div class="centered">

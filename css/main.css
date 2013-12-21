@@ -165,6 +165,24 @@ li {
 	padding: 10px 0;
 }
 
+.demo { 
+text-align: left; 
+width: 650px;
+border:solid 5px #CBCAC6;
+background-color:#f9f9f9;
+padding: 20px 20px 30px 20px; 
+font-family:Segoe UI, Arial,Verdana,Helvetica,sans-serif;
+font-size: 80%;
+margin: 0 auto; 
+} 
+
+.instructions {
+	width: 650px;
+	padding: 20px 20px 30px 20px;
+	font-size: 90%;
+	margin: 0 auto;
+}
+
 /* ~~ This grouped selector gives the lists in the .content area space ~~ */
 .content ul, .content ol { 
 	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
@@ -173,7 +191,8 @@ li {
 /* ~~ The footer ~~ */
 .footer {
 	padding: 10px 0;
-	background-color: #6F7D94;
+	background-color: #000;
+	color: #fff;
 }
 
 table {
@@ -437,16 +456,7 @@ form:after {
 
 button {font-family:Arial,Verdana;}
 
-.demo { 
-text-align: left; 
-width: 650px;
-border:solid 5px #CBCAC6;
-background-color:#f9f9f9;
-padding: 20px 20px 30px 20px; 
-font-family:Segoe UI, Arial,Verdana,Helvetica,sans-serif;
-font-size: 80%;
-margin: 0 auto; 
-} 
+
 table.Grid
 {
 	border-width: 5px;

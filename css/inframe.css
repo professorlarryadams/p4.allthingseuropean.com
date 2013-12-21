@@ -1,0 +1,320 @@
+/*********************************/
+/*   inframe styles-- no longer being done as iframe but still used   */
+
+/********************************/
+
+
+/* -----left nav info----- */
+.nav_ul {list-style-image:url(/nmc/images/general/arrow.jpg); font-size:92%; margin:5px 1em 0 1em;}
+.nav_ul li {margin-top:3px}
+.nav_ul2 {margin:.5em .5em .5em 1em;}
+
+.branding {
+			text-align:center; margin-top:5px;
+			background-color:#FFFFFF;
+			margin: 10px;
+			padding: 10px;
+}
+
+/* new left nav on home page*/
+.new_head {
+	margin: 2px 0px 0px 0px;
+	padding:0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight:bold;
+	font-size:1em;
+	text-align:center;
+}
+.new_head a {color:#003366; text-decoration:none;
+	display: block;
+	width:99%;
+	height:27px;
+	background-image:url(/nmc/images/general/long_button3.png);
+	background-position:6px;
+	background-repeat:no-repeat;
+	padding:12px 5px 0px 5px;}
+	
+.new_head a:link {color:#003366; text-decoration:none;}
+.new_head a:visited {color:#003366; text-decoration:none;}
+.new_head a:hover {color:#003366; text-decoration:underline;}
+.new_head a:active {color:#003366; text-decoration:none;}
+
+
+/* specific to left navigation on most pages */
+
+h3 a:link {text-decoration:none; color:#036;}
+h3 a:visited {text-decoration:none; color:#036;}
+
+.sub_panel h3{font-size:1.1em; margin:.5em 0 0 0; border-bottom:dotted 1px;}
+.sub_panel2 h3{font-size:1.1em; margin:.5em 0 0 0; border-bottom:dotted 1px;}
+.sub_panel p {margin:5px 0 0 0;}
+.sub_panel2 p {margin:5px 0 0 0;}
+.inside_sub_panel {position:inherit; overflow:hidden; margin:0; padding:0;}
+.sub_menu {margin:1em 0 0 0; padding:0;}
+.sub_menu h5 {color:#000; margin:10px 0 2px 0;}
+.sub_menu a:link {color:#036;}
+.sub_menu a:visited {color:#036;}
+.sub_menu a:hover{color:#036;}
+.sub_menu a:active {color:#036;}
+
+/* top of main section
+----most pgs---*/
+#main_left_top {width:300px; height:215px; padding:10px;}
+#main_right_top {margin:0; position:relative; width:300px; height:235px}
+
+/* top of main section
+----most pgs---
+---height varies and will need added as style---
+*/
+#tab_section {width:640px; height:360px; padding-top:10px; margin:0}
+
+/* bottom main section of
+---- home pg --- */
+#news {float:left; width:413px; margin:1em 10px 0 0; border:#516b8c solid; border-width:1px 3px 3px 1px; box-shadow:3px 3px 5px #999;}
+#news h6{margin-top:1em;}
+
+
+#news ul {border-bottom:1px solid #bbb; margin:0;}
+#news li {padding: 0 0 2px 1em; list-style:none;}
+ 
+#extra-links {
+	width:215px;
+	float:left;
+	margin-top:1em;
+
+}
+#extra-links div { margin-bottom:10px; box-shadow:3px 3px 5px #999;}
+#extra-links div#faq {background-image:url(/nmc/images/general/faq_bg.jpg); border:solid 1px #516b8c; border-bottom-width:3px; border-right-width:3px; box-shadow: 3px 3px 10px #666; text-align:center; padding:5px 38px 10px 0; font-size:20px; font-family:Georgia, "Times New Roman", Times, serif; line-height:16px;}
+
+/* Place holder for videos*/
+.video {background-image:url(/nmc/images/videos/video_icon.jpg); background-position:0 0; background-repeat:no-repeat; width:145px; text-align:center; margin-bottom:0px; box-shadow: none;}
+.video_btn {margin-top:20px;}
+.video_text {background-color:#cc3333; font-size:100%; font-weight:bold; padding:5px; width: 130px; margin:80px auto 0 auto;}
+.video_text a:link{color:#FFFFFF; text-decoration:none;}
+.poster {width:215px; height:198px; text-align:center; margin:auto; margin-bottom:0px; box-shadow: none;}
+
+.linkbox div{
+/*    box-sizing:border-box; */
+	border:1px solid #7d7d7d;
+	box-shadow:3px 3px 5px #999;
+	border-bottom-width:3px;
+	border-right-width:3px;
+	margin-right:10px;
+	margin-top:1em;
+	float:left;
+	width:200px;
+}
+
+.linkbox .wider{width:210px; margin-right:0;}
+.linkbox h3{ margin:.5em; border-bottom:dotted 1px;}
+.linkbox ul{font-size:83%;}
+.linkbox ul li{ margin:3px 0 0 0; list-style:none}
+ 
+#content.medium .linkbox div select{ font-size:60%;}
+#content.large .linkbox div select{ font-size:50%; }
+
+.nav-select {border:1px solid; margin:10px; width:90%;} 
+
+/* use if emergency message is needed on home page */
+#atten {color:#000; text-align:center; font-weight:bold; margin-top:1em;}
+
+/* use for flash video or rollovers */
+.flash {border: 1px solid #516b8c; border-bottom-width:3px; border-right-width:3px;	box-shadow:3px 3px 5px #999; padding:0; margin:0; box-sizing:border-box; -moz-box-sizing:border-box; /*Firefox*/ background-color:#516b8c; z-index:30;}
+
+/*blue-gray border w/shadow*/
+.border {border:1px solid #516b8c; border-bottom-width:3px; border-right-width:3px; box-shadow: 3px 3px 10px #666;}
+.shadow {box-shadow:3px 3px 5px #999;}
+
+/* announcement boxes through out */
+.announcement {float:left; color:#CC3333; height:60px; width:623px; padding:0 8px 0 7px; margin:10px 0 10px 0; text-align:center; border:1px solid #516b8c; border-bottom-width:3px; border-right-width:3px; box-shadow: 3px 3px 10px #666;} 
+.announcement_red {float:left; color:#CC3333; height:60px; width:623px; padding:0 8px 0 7px; margin:10px 0 10px 0; text-align:center; border:1px solid #516b8c; border-bottom-width:3px; border-right-width:3px; box-shadow: 3px 3px 10px #666; background-image:url(/nmc/images/general/redScreen_bg.png); background-repeat:repeat;} 
+
+.announcement h2 {margin:5px 0 0 0; font-size:1em;}
+#gen_ann {text-align:center; font-size:95%; margin:5px 0 0 0;}
+
+/* header on most pgs */
+.main_hdr {background-color:#959fab; border:1px solid #516b8c; border-bottom-width:3px; border-right-width:3px; box-shadow: 3px 3px 10px #666; padding:10px 0 10px 0; margin-bottom:.5em; margin-top:0; }
+
+/*  main sections of 
+-----REC----- pgs */
+
+.photo { height:300px; width:230px; padding:0 .5em 0 .5em; font-size:83%; float:left;} 
+.photo p { margin:5px 5px 0 5px;}
+
+.rec_txt {width:623px; padding:.5em;}
+.caption {color:#999; margin:10px 0 10px 0;}
+.appt_hol {margin:0; padding:0;}
+/*for table data on REC pages*/
+.rec {width:80px;}
+
+/* used for some 
+---color boxes --- */
+div.c_box_container {border: 0px; overflow: hidden; width: 95%; padding: 5px; margin:0px auto 0px auto;}
+p.bx {text-align:justify; margin-left:2em; margin-right:2em;}
+#container {width: 638px; padding: 0px; margin:0px auto 0px auto;}
+
+/* used in some colorboxes */
+.AccordionPanelContent1 {background-color:#FFFFFF; width:100%;}
+.AccordionPanelContent1 p {margin:.5em 1em 0 1em; text-align:left;}
+.AccordionPanelContent1 ul {margin:.5em 1em 0 1em; text-align:left;}
+.AccordionPanelContent1 ol {margin:.5em 1em 0 1em; text-align:left;}
+.AccordionPanelContent1 li {margin-top:5px; margin-left:1em; text-align:left;}
+
+/* new---all email form colorboxes */
+.e_mail {
+	width:90%;
+	font-size:95%;
+	margin:auto;
+	text-align:left;
+}
+.e_mail_head {background-color:#003366; border:1px ridge #959fab; margin:auto; box-shadow: 3px 3px 10px #666; width:99.9%}
+.e_mail_icon {padding:0; width:122px; border: ridge; color:#FFFFFF; text-align:center;}
+.e_mail_title {text-align:center; font-size:1.5em; font-weight:bold; border: ridge; color:#FFFFFF; padding:10px; margin:0 5px 0 5px;}
+.e_mail_contact {background-color:#eeeeee; padding:10px; border:ridge; margin:auto; min-height:400px;}
+.spacer {line-height:5px; background-color:#003366; padding:0;}
+
+/* table pdf in color boxes*/
+table.color_box {background-color:#666; margin:10px auto 10px auto; border:ridge #666 1px;}
+table.color_box td{background-color:#FFFFFF; border:ridge #666 1px;}
+tr.blue td, th	{background-color:#003366; color:#FFFFFF; text-align:center; font-weight:bold;}
+tr.red	 td {background-color:#cc3333; color:#FFFFFF; text-align:center; font-weight:bold;}
+tr.blue, tr.red td {padding:5px}
+td.pdf {background-image:url(/nmc/images/general/pdficon_12.png); background-repeat:no-repeat; background-position:0px 5px; padding:5px 0 5px 14px}
+table_input {height:40px; vertical-align:top;}
+
+/* address in color box */
+.address {text-align:left; padding:10px; margin:auto;}
+
+/* used for some
+--- tabbed panel content--- */
+
+.TabbedPanelsContent {font-size:83%;}
+.TabbedPanelsContent p { margin:0px; padding:5px 0 0 0;}
+.TabbedPanelsContent li {margin-bottom:3px;}
+/* used on some tabbed panels for tables */
+.tab_box_table {border:ridge; background-color:#FFFFFF; margin:10px auto 5px auto;}
+.tab_table {margin:0px auto 0px auto;}
+
+/* used to make
+--- extra space ---
+ between various items when Larry deems it necessary */
+h3.space {margin-top:1.5em;}
+.space li {margin-top:5px; font-size:1em;}
+table.space td {padding-top:1em; font-size:.9em;}
+.tall_space li {font-size:1.1em; font-stretch:condensed; margin-top:1em}
+
+/*---sitemap---*/
+.legend {font-size:1em;font-weight:bold; text-align:center; margin:1em 0 .5em 0; color:#036;}
+.legend a:link, a:visited, a:hover, a:active {color:#036; text-decoration:none;}
+.legend table{ width:95%; border:2px inset; background-color:#959fab; border-color:#FFF; padding:3px; margin:auto;}
+.legend td { background-color:#CCCCCC; border:solid 1px #FFF;}
+.siteframe {padding:0px; text-align:left;}
+.site_map {text-align:left; background-color:#eeeeee;}
+.site_map h3 {font-size:1.2em; color:#069; margin-top:1em; margin-bottom:.5em; padding:3px; width:16em; text-align:center; border:2px outset #959fab; background-color:#CCCCCC;}
+.site_map ul {margin-top:10px; list-style:none; margin-left:0px;}
+.site_map ul.ul2 {margin-top:5px; margin-bottom:0px; margin-left:10px; list-style:none;}
+.site_map ul.ul3 {margin-top:5px; margin-bottom:0px; margin-left:20px; list-style:none;}
+.site_map li {margin-top:5px;}
+.site_map a:link, a:visited, a:hover, a:active {text-decoration:underline;}
+
+
+/*for 
+--- csc and FAQ pgs ---
+  icon links*/
+.table_cell {border:ridge 4px #CCCCCC; text-align:center; margin:0; padding:0; height:124px; width:124px; background-color:transparent
+}
+.table_cell a:link{ background-color:#c1d2e0; text-align:center; 
+}
+.table_cell a:visited{background-color:#c1d2e0;  text-align:center; 
+}
+.table_cell a:hover{background-color:#a1b2c0;  text-align:center;  
+}
+.table_cell a:active{background-color:#c1d2e0;  text-align:center; 
+}
+.table_cell_2 {border:ridge 3px #CCCCCC; text-align:center; margin:0; padding:10px; width:90px;
+}
+/*for
+--- table data in important info box---
+ on most pages*/
+.ii {width:110px}
+
+/* for
+---records request and veterans pgs---*/
+.records {height:360px; width:627px; margin-top:10px; padding:5px; font-size:90%;}
+
+/*---survey form--*/
+.survey {background-color:#FFFFFF; font-size:90%; margin:auto; width:94%; border:ridge;}
+.check {float:left; width:50px; text-align:center; background-color:transparent; margin-left:3px;}
+.grey {background-color:#CEE7FF}
+
+.grey label {padding:3px 5px 3px 5px}
+
+/* commented out for now 
+.tab_text {padding:0; margin:0 0 0 2em; position:relative; top:-8px; line-height:0px}*/
+
+
+/* for interior foot--commented out
+.int_foot h3{font-size:1.1em; margin:.5em 0 0 0; border-bottom:dotted 1px;}
+.int_foot {float:left; width:407px; padding-left:5px; margin:1em 10px 0 0; border:#516b8c solid; border-width:1px 3px 3px 1px; box-shadow:3px 3px 5px #999;}
+.int_foot_sec {float:left; width:48%; margin:0; padding:0; padding-right:2%; font-size:.8em;}
+.int_foot_sec ul {text-align:left; margin:.5em; padding:0; color:#036;}
+.int_foot_sec ul li {list-style:none; }
+.int_foot_sec ul li a:link {color:#036;}
+.int_foot_sec ul li a:visited {color:#036;}
+.int_foot_sec li a:active {color:#036;}
+.int_foot_sec ul li a:hover {color:#036;}
+.contact {font-size:.9em; margin-left:5%;} 
+.ref_ul {margin:0px; padding:0px 5px 0 20px; list-style-type: none;}
+.ref_ul li {text-indent:-10px;}
+.homeport {width:250px; height:100px; background-color:#CCCCCC; margin:10px auto 10px auto; padding:10px; font-size:.9em;}
+.submit {width:50px; text-align:center; margin:10px auto 0px auto;}*/
+
+/*  commented out from CSC and charter boat capt pages---Larry changed his mind */
+.middle_button {
+	float:left;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight:bold;
+	font-size:1em;
+	text-align:center;
+	width:205px;
+	height:58px;
+	background-image:url(/nmc/images/general/long_button2.png);
+	background-repeat:no-repeat;
+	background-position:0px;
+}
+.middle_button a {display:block; color:#FFFFFF; text-decoration:none; text-align:center; padding-top:20px;}
+.middle_button a:link {color:#FFFFFF; text-decoration:none;}
+.middle_button a:visited {color:#FFFFFF; text-decoration:none;}
+.middle_button a:hover {color:#6784a1; text-decoration:none;}
+.middle_button a:active {color:#FFFFFF; text-decoration:none;} 
+.centered_buttons {width: 410px; margin: 0 auto;}
+
+
+/* uncommented out for use on STCW temporarily*/
+
+
+/* commented out --- Larry changed his mind
+#navigation li.home a {font-weight:bold; color:#fff; text-decoration:none; padding:.4em 1em .5em 1em; background-image:url(/nmc/images/general/home_1.png); background-position:15px 2px; background-repeat:no-repeat;}
+#navigation li.home a:visited {color:#FFF; background-color:transparent; border:none;}
+#navigation li.home a:hover {color:#FFF; text-decoration:none; font-weight:bold; background-image:url(/nmc/images/general/home_2_hover.png); background-repeat:no-repeat; background-position:15px 2px; border:none}
+#navigation li.home a:active {background-color:#fff; border-top-left-radius: 10px; border-top-right-radius:10px; border:2px solid #92A7BC; border-bottom-width:1px; border-bottom-color:#FFFFFF; font-weight:bold; color:#000; text-decoration:none; padding:.4em 1em .5em 1em; background-image:url(/nmc/images/general/home_1.png); background-position:15px 4px; background-repeat:no-repeat;}
+
+#navigation li.home2 a {background-color:#fff; border-top-left-radius: 10px; border-top-right-radius:10px; border:2px solid #92A7BC; border-bottom-width:1px; border-bottom-color:#FFFFFF; font-weight:bold; color:#000; text-decoration:none; padding:.4em 1em .5em 1em; background-image:url(/nmc/images/general/home_1.png); background-position:15px 4px; background-repeat:no-repeat;}
+ */
+ 
+ 
+/* commented out---for nav on forms pg ---Larry decided to delete this pg 
+.roll_over_head {
+	background-image:url(/nmc/images/general/90_Background_grad_top2.jpg);
+	background-position:bottom;
+	border: 1px solid #7d7d7d;
+	border-bottom-width:2px;
+	border-right-width:2px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight:bold;
+	font-size:.95em;
+	color:#FFFFFF;
+	padding:5px;
+	text-align:center;
+}
+*/

@@ -6,7 +6,6 @@
 <title>Upload Files</title>
 
 <!-- CSS -->
-
 <link href="/css/main.css" rel="stylesheet" type="text/css">
 <link href="/css/SpryValidationTextField.css" rel="stylesheet" type="text/css">
 
@@ -14,59 +13,58 @@
 
 <script src="/js/SpryValidationTextField.js" type="text/javascript"></script>
 
-</head>
 
-<body>
 <br />
-<div class="centered red">
+
+		<div class="centered red">
 		<?php if($user): ?>
         		<h4>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h4>
-        		<p> Welcome to the Merchant Mariner Credential Secure Electronic Application System (MMSEAS)</p>
+        		<p>Please upload your supporting documentation.</p>
 		<?php else: ?>
         	<h2>Secure Online Forms</h2>
 		<?php endif; ?></div>
+</head>
 
-	<div class="container_12 standard">
-    
-    <br />
-    
-        <div class="demo">                        
-        <h1>Selecting multiple files for upload</h1>
-		<p>PHP File Uploader allows you to select multiple files and upload them at once.</p>
-        <p>Limit is 2 megabytes per upload!</p>
+<body>
+
+	<div class="container_12 standard"> 
+
+ <br />
+ 
+  <div class="centered"><h2>Uploading Supporting Documents</h2></div>
+        
+  <div class="demo">                        
+        <h2>Required Format</h2>
+		<p><strong>Step 1:</strong> Create a Microsoft Word Document with all your supporting documentations.</p>
+    	<p><strong>Step 2:</strong> Save your document as a Adobe extention (filename.pdf).</p>
+    	<p><strong>Step 3:</strong> Select the Browse... button to upload your document.  Then click on the submit button and you are done!</p>
+        
+        <br />
 		    
 			<form  enctype="multipart/form-data" method="post" action="/posts/p_uploads">
 				
-                <input name="uploads" type="file" id="uploads" />
-				<input type="submit" id="uploads" value="submit" />
+                <input name="files" type="file" id="uploads" />
+				<input type="submit" id="files" value="submit" />
             
                     <progress id="progressBar" value="0" max="100" style="width: 300px;"></progress>
                     <h3 id="status"></h3>
                     <p id="loaded_n_total"></p>
-        
-        	</form>
-            
-            <?php if(isset($error)): ?>
-            <div class="callout-error">
-                <h4>Upload failed.</h4> 
-                <p>Image file must be a docs, docx, xls, pdf, jpg, or png.</p>
-            </div>
-        <?php endif; ?> 
-		
-   </div>
+  			</form>
+  </div><br />
    
-     <br /> 
-   
-   <div class="centered">
-   
-    <h3>Required Format for Uploading Documents</h3>
-        <p>You can upload your supporting documentation for Sea Service, TWIC, Drug Testing, Parental Consent, Course Certificates, and Militry Records.</p> 
+  <?php if(isset($error) && $error == 'invaild-file-type'): ?>
+      </p>
+    <div class='error'>
+          Signup Failed. All fields are required.
+          <a href="/posts/uploads">Signup</a>
+      </div>
+
+    <?php endif; ?>
         
-        <p>Recomand that you use Microsoft Word software to cut and paste all your documents together.  Then save the MS Word documents as a Adobe pdf.  The application will be saved with your id number so you can update your documents at any time.</p> 
-        
-    </div>
+        <br /><br /><br />
      
 </div>
 
 </body>
- </html>
+</html>
+
