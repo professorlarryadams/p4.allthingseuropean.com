@@ -19,12 +19,6 @@
 <script src="/js/Script/jquery.password-strength(new).min.js" type="text/javascript"></script>
 <script src="/js/SpryValidationPassword.js" type="text/javascript"></script>
 
-		<script>
-  $(function() {
-    $( document ).tooltip();
-  });
-  </script>
-
 
 <script type="text/xml">
 <!--
@@ -92,19 +86,10 @@
 	
 	
 	<?php if(isset($error) && $error == 'blank-fields'): ?>
-      </p>
     <div class='error'>
           Signup Failed. All fields are required.
           <a href="/users/signup">Signup</a>
       </div>
-
-    <?php endif; ?>
-    
-    <?php if(isset($error) && $error == 'pwd'): ?>
-        <div class='error'>
-            Your password is too weak try again. 
-            <a href="/users/signup">Signup</a>
-        </div>
 
     <?php endif; ?>
     

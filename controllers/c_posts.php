@@ -11,7 +11,11 @@ class posts_controller extends base_controller {
         }
     }
 
-    public function add() {
+    /*-------------------------------------------------------------------------------------------------
+    Display a form for page 1 application so users can apply for a MMC        
+    -------------------------------------------------------------------------------------------------*/
+	
+	public function add() {
 
         # Setup view
         $this->template->content = View::instance('v_posts_form');
@@ -22,7 +26,12 @@ class posts_controller extends base_controller {
 
     	}
 
-    public function p_add() {
+    /*-------------------------------------------------------------------------------------------------
+    Controller for page 1        
+    -------------------------------------------------------------------------------------------------*/
+	
+	
+	public function p_add() {
 
         # Associate this post with this user
         $_POST['user_id']  = $this->user->user_id;
@@ -40,6 +49,10 @@ class posts_controller extends base_controller {
 
     	}
 	
+	/*-------------------------------------------------------------------------------------------------
+    Display a form for page 2 application so users can apply for a MMC        
+    -------------------------------------------------------------------------------------------------*/
+	
 	public function add2($record_id) {
 	  
 	   # Passing the arguement to the view
@@ -52,8 +65,11 @@ class posts_controller extends base_controller {
 
     	}
 
-    public function p_add2() {
-		
+    /*-------------------------------------------------------------------------------------------------
+    Controller for page 2 application       
+    -------------------------------------------------------------------------------------------------*/
+	
+	public function p_add2() {	
 			
 		$record_id = $_POST['record_id'];
 		unset($_POST['record_id']);
@@ -64,8 +80,11 @@ class posts_controller extends base_controller {
         Router::redirect('/posts/uploads'); 
 
     	}
-		
-		
+	
+	/*-------------------------------------------------------------------------------------------------
+    Display a form for uploads page so users can upload their supporting documents       
+   	-------------------------------------------------------------------------------------------------*/	
+	
 	public function uploads() {
 		
 		# Setup view
@@ -77,12 +96,19 @@ class posts_controller extends base_controller {
 	
 	}		
 
+	/*-------------------------------------------------------------------------------------------------
+    Controller for uploads form       
+    -------------------------------------------------------------------------------------------------*/
+	
 	public function p_uploads($error = NULL) {
 			 
 		# Associate this post with this user
         $_POST['user_id']  = $this->user->user_id;
+		
+		$_POST['created'] = Time::now();
+		
 			
-			# if user specified a new image file, upload it
+			# if user specified a new image file, upload it to folder
 			if ($_FILES['uploads']['error'] == 0)
 			{
 				# upload an image
@@ -93,15 +119,13 @@ class posts_controller extends base_controller {
 					Router::redirect("/posts/uploads/error"); 
 				}
 				else {
+					# Insert this user into the database
+                	$uploads = DB::instance(DB_NAME)->insert('uploads', $_POST);
+		
 					# process the upload
 					$data = Array("uploads" => $uploads);
 					DB::instance(DB_NAME)->update("uploads", $data, "WHERE user_id = ".$this->user->user_id);
 					
-					$_POST['created'] = Time::now();
-					$_POST['modified'] = Time::now();
-				
-					# Insert this user into the database
-                	$uploads = DB::instance(DB_NAME)->insert('uploads', $_POST);
 				}
 			}
 			else
@@ -115,6 +139,9 @@ class posts_controller extends base_controller {
     	}   
 			                          
 		
+		/*-------------------------------------------------------------------------------------------------
+        Display a form for updates page so users can update their contact information       
+        -------------------------------------------------------------------------------------------------*/
 		
 		public function updates() {
 
@@ -126,6 +153,10 @@ class posts_controller extends base_controller {
         echo $this->template;
 
     	}
+		
+		/*-------------------------------------------------------------------------------------------------
+        Controller for updates page       
+        -------------------------------------------------------------------------------------------------*/
 
     	public function add_updates() {
 
@@ -144,6 +175,10 @@ class posts_controller extends base_controller {
         Router::redirect('/users/profile');
 
     	}
+		
+		/*-------------------------------------------------------------------------------------------------
+        Display a the results for page 1 application         
+        -------------------------------------------------------------------------------------------------*/
 		
 		public function view_add() {
 			
@@ -171,6 +206,10 @@ class posts_controller extends base_controller {
 			
 		}
 		
+		/*-------------------------------------------------------------------------------------------------
+        Display a the results for page 2 application         
+        -------------------------------------------------------------------------------------------------*/
+		
 		public function view_add2() {
 			
 		# Set up the View
@@ -196,6 +235,10 @@ class posts_controller extends base_controller {
 		echo $this->template;
 			
 		}
+		
+		/*-------------------------------------------------------------------------------------------------
+        Display a the results for uploads        
+        -------------------------------------------------------------------------------------------------*/
 		
 		public function view_uploads() {
 			
@@ -223,6 +266,10 @@ class posts_controller extends base_controller {
 			
 		}
 		
+		/*-------------------------------------------------------------------------------------------------
+        Display a the results for updates        
+        -------------------------------------------------------------------------------------------------*/
+		
 		public function view_updates() {
 			
 		# Set up the View
@@ -247,11 +294,9 @@ class posts_controller extends base_controller {
 		# Render the View
 		echo $this->template;
 			
-		}
+		}	
 		
-		
-		
-}
+} # end of file
 		
 
 			

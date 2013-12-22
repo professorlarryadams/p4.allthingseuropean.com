@@ -1,7 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-	<title><?php if(isset($title)) echo $title; ?></title>
+<meta charset="UTF-8">
+	
+    <title><?php if(isset($title)) echo $title; ?></title>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
                                          
@@ -15,12 +17,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
         <script src="/js/jquery-1.9.1.js"></script>
         <script src="/js/jquery-ui.js"></script> 
-        
-        	<script>
-  $(function() {
-    $( document ).tooltip();
-  });
-  </script> 
                            
                                                                                 
         <!-- Controller Specific JS/CSS -->
@@ -37,12 +33,12 @@
     <img src="/images/header-1.jpg" width="960" height="202" alt="header_image">
     <div class="menu">
 
-                <a href='/'>Home</a> |
+                <a href='/'>Home</a> | <a href="/users/contact">Contact</a> |
 
                 <!-- Menu for users who are logged in -->
                 
 				<?php if($user): ?>
-                     <a href="/users/contact">Contact</a> | 
+                     
                     <a href='/users/profile'>Profile</a> |
                     <a href='/posts/add'>Form</a> |
                     <a href='/posts/uploads'>Uploads</a> |

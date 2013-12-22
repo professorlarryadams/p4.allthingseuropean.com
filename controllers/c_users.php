@@ -2,7 +2,7 @@
 	class users_controller extends base_controller {
 
         /*-------------------------------------------------------------------------------------------------
-        
+        Constructure for users pages
         -------------------------------------------------------------------------------------------------*/
     	public function __construct() {
     
@@ -32,7 +32,7 @@
     	}
     
     	/*-------------------------------------------------------------------------------------------------
-    	Process the sign up form
+    	Controller for sign up form
     	-------------------------------------------------------------------------------------------------*/
 		
 		public function p_signup($error = NULL) {
@@ -48,15 +48,15 @@
                     
                     # Send to Login page
                     # Pass error message along - to the login page - indicate 'user-exists' error
-                          Router::redirect('/users/login/user-exists');		  	
+                          Router::redirect('/users/signup/user-exists');		  	  	
 					
 				} else {
                             
 							 # Mail Setup
 										$to = $_POST['email'];
 										$subject = "Welcome to Secure Onlin Forms!";
-										$message = "You now have an account as your email is your username.  Please visit our login page to try our forms.";
-										$from = 'admin@allthingseuropean.com';
+										$message = "You now have an account as your email is your username.  You are ready to complete the application.";
+										$from = 'admin@p4.allthingseuropean.com';
 										$headers = "From:" . $from;         
 									
 							 # More data we want stored with the user
@@ -101,6 +101,10 @@
     	}
 		
 		
+		/*-------------------------------------------------------------------------------------------------
+    	Controller for login form
+    	-------------------------------------------------------------------------------------------------*/
+		
 		public function p_login() {
 	    
 	    # Sanitize Data Entry
@@ -137,7 +141,7 @@
   
 
         /*-------------------------------------------------------------------------------------------------
-        Logout        
+        Logouts the users     
         -------------------------------------------------------------------------------------------------*/
     	public function logout() {
 
@@ -160,7 +164,7 @@
 		}
 
         /*-------------------------------------------------------------------------------------------------
-        Profile
+        Displays the Profile page which helps with navigation to views
         -------------------------------------------------------------------------------------------------*/
     	public function profile($error = NULL) {
     
@@ -185,11 +189,11 @@
     	
     	# Render template
     	echo $this->template;
-    } 
-	
-	/*-------------------------------------------------------------------------------------------------
-        Display a form so users can sign up        
-        -------------------------------------------------------------------------------------------------*/
+		} 
+		
+		/*-------------------------------------------------------------------------------------------------
+			Display a form so users can email us for isses       
+		-------------------------------------------------------------------------------------------------*/
     	
 		public function contact() {
         
@@ -199,8 +203,10 @@
         
         # Render the view (localhost/users/signup)
         echo $this->template;
-    	}		
-    
+    	}
+		
+		
+		
 	
 } # end of class 
 

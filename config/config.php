@@ -4,15 +4,9 @@ When setting configurations, remember that any app is also impacted by the confi
 Most of the core configs can be overwritten here on the app level.
 */
 
-# For example there's a constant in core config set for TIME_FORMAT 
+//define('TIME_FORMAT', 'F j, Y g:ia');
 
-	//if(!defined('TIME_FORMAT')) define('TIME_FORMAT', 'F j, Y g:ia'); 
-
-# If you want a different default time format for this app, set it below
-
-	define('TIME_FORMAT', 'M j Y'); 
-
-
+//define('TIME_NOW', 'F j, Y g:ia');
 
 # What is the name of this app?
 	define('APP_NAME', 'Secure Online Forms');  

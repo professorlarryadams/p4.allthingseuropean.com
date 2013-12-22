@@ -1,4 +1,3 @@
-<br />
 <?php 
 if(isset($_POST['submit'])){
     $to = "admin@p4.allthingseuropean.com"; //  your Email address
@@ -18,10 +17,9 @@ if(isset($_POST['submit'])){
     // You can also use header('Location: thank_you.php'); to redirect to another page.
     }
 ?>
-<br />
 
-<!DOCTYPE html>
-
+<!doctype html>
+<html>
 <head>
 <meta charset="UTF-8">
 <title>Contact Form</title>
@@ -58,31 +56,32 @@ if(isset($_POST['submit'])){
 
 <div id="content">
 
-<form action="" enctype="multipart/form-data" method="post">
+<form action="/users/contact" enctype="multipart/form-data" method="post">
 <h1>Contact</h1>
 
 <span id="sprytextfield1">
 <label for="first_name"><strong>First Name:</strong></label>
 <br />
-<input type="text" name="first_name" id="first_name"><br />
+<input type="text" name="first_name" id="first_name" title="Please enter your first name."><br />
 <span class="textfieldRequiredMsg">A value is required.</span></span><br />
 
 <span id="sprytextfield2">
 <label for="last_name"><strong>Last Name:</strong></label>
 <br />
-<input type="text" name="last_name" id="last_name">
+<input type="text" name="last_name" id="last_name" title="Please enter your last name.">
 <br />
 <span class="textfieldRequiredMsg">A value is required.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span></span><br />
 
 <span id="sprytextfield3">
-<label for="email">Email:</label>
-<input type="text" name="email" id="email">
+<label for="email"><strong>Email:</strong></label>
+<br />
+<input type="text" name="email" id="email" title="Please enter your email."><br />
 <span class="textfieldRequiredMsg">A value is required.</span><span class="textfieldInvalidFormatMsg">Invalid format.</span><span class="textfieldMinCharsMsg">Minimum number of characters not met.</span></span> <strong>
 
 <span id="sprytextarea2">
 <label for="message">Message:</label>
 </span></strong><br />
-<textarea name="message" id="message" cols="45" rows="5"></textarea><br />
+<textarea name="message" id="message" cols="45" rows="5" title="Please enter your request."></textarea><br />
 <span class="textareaRequiredMsg">A value is required.</span>
 <input type="submit" name="submit" value="Submit">
 
