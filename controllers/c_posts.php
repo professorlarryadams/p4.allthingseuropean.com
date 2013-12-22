@@ -65,6 +65,7 @@ class posts_controller extends base_controller {
 
     	}
 		
+		
 	public function uploads() {
 		
 		# Setup view
@@ -82,7 +83,7 @@ class posts_controller extends base_controller {
         $_POST['user_id']  = $this->user->user_id;
 			
 			# if user specified a new image file, upload it
-			if ($_FILES['files']['error'] == 0)
+			if ($_FILES['uploads']['error'] == 0)
 			{
 				# upload an image
 				$uploads = Upload::upload($_FILES, "/uploads/", array("pdf", "PDF"), $this->user->user_id);
@@ -93,14 +94,14 @@ class posts_controller extends base_controller {
 				}
 				else {
 					# process the upload
-					$data = Array("files" => $files);
+					$data = Array("uploads" => $uploads);
 					DB::instance(DB_NAME)->update("uploads", $data, "WHERE user_id = ".$this->user->user_id);
 					
 					$_POST['created'] = Time::now();
 					$_POST['modified'] = Time::now();
 				
 					# Insert this user into the database
-                	$files = DB::instance(DB_NAME)->insert('uploads', $_POST);
+                	$uploads = DB::instance(DB_NAME)->insert('uploads', $_POST);
 				}
 			}
 			else

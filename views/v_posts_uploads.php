@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -13,6 +13,11 @@
 
 <script src="/js/SpryValidationTextField.js" type="text/javascript"></script>
 
+		<script>
+  $(function() {
+    $( document ).tooltip();
+  });
+  </script>
 
 <br />
 
@@ -27,17 +32,18 @@
 
 <body>
 
-	<div class="container_12 standard"> 
+	<div class="container_12 standard centered"> 
 
  <br />
  
-  <div class="centered"><h2>Uploading Supporting Documents</h2></div>
+  <h2>Uploading Supporting Documents</h2>
         
   <div class="demo">                        
         <h2>Required Format</h2>
 		<p><strong>Step 1:</strong> Create a Microsoft Word Document with all your supporting documentations.</p>
     	<p><strong>Step 2:</strong> Save your document as a Adobe extention (filename.pdf).</p>
     	<p><strong>Step 3:</strong> Select the Browse... button to upload your document.  Then click on the submit button and you are done!</p>
+    	<p>Discliamer - the file upload will replace your exisiting file so we always have the most current information. You can submit as many times as you want but we will only keep your most recent upload file.</p>
         
         <br />
 		    
@@ -50,13 +56,15 @@
                     <h3 id="status"></h3>
                     <p id="loaded_n_total"></p>
   			</form>
-  </div><br />
+  </div>
+  
+  <br />
    
   <?php if(isset($error) && $error == 'invaild-file-type'): ?>
-      </p>
+      
     <div class='error'>
-          Signup Failed. All fields are required.
-          <a href="/posts/uploads">Signup</a>
+          Upload Failed. All fields are required.
+          <a href="/posts/uploads">Uploads</a>
       </div>
 
     <?php endif; ?>

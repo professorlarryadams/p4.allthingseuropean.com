@@ -31,11 +31,12 @@
     <img src="/images/header-1.jpg" width="960" height="202" alt="header_image">
     <div class="menu">
 
-                <a href='/'>Home</a> | <a href="#">Contact</a> | 
+                <a href='/'>Home</a> |
 
                 <!-- Menu for users who are logged in -->
                 
 				<?php if($user): ?>
+                     <a href="/users/contact">Contact</a> | 
                     <a href='/users/profile'>Profile</a> |
                     <a href='/posts/add'>Form</a> |
                     <a href='/posts/uploads'>Uploads</a> |

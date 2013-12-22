@@ -4,7 +4,8 @@
 
 		<?php if($user): ?>
         		<div class="red"><h4>You are logged in as <?=$user->first_name;?> <?=$user->last_name;?></h4>
-        		<p>Results view for updated contact information</p></div>
+        		<p> Welcome to the Merchant Mariner Credential Secure Electronic Application System (MMSEAS)</p>
+                <p><strong>UPDATES VIEW</strong></p></div>
 		<?php else: ?>
         	<div class="red"><h2>Secure Online Forms</h2></div>
 		<?php endif; ?>

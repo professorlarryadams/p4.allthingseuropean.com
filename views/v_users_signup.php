@@ -19,6 +19,13 @@
 <script src="/js/Script/jquery.password-strength(new).min.js" type="text/javascript"></script>
 <script src="/js/SpryValidationPassword.js" type="text/javascript"></script>
 
+		<script>
+  $(function() {
+    $( document ).tooltip();
+  });
+  </script>
+
+
 <script type="text/xml">
 <!--
 <oa:widgets>

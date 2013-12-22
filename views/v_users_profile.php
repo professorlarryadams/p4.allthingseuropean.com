@@ -1,4 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
 
+<title>Profile Page</title>
+
+<!-- CSS -->
+<link href="/css/main.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
 <div class="container_12 standard centered">
 <br />
     
@@ -23,7 +34,15 @@
       <?=$user->created?>
     </p>
     <h4>If you have any questions please feel free to contact me through the contact forms on the main menu.</h4>
+    
+    <br /><br /><br />
+    
 </div>
+
+<br />
+
+</body>
+</html>
     
     
   

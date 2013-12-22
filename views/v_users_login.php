@@ -8,22 +8,24 @@
 <!-- CSS -->
 <link href="/css/main.css" rel="stylesheet" type="text/css">
 <link href="/js/SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
-<link href="../js/SpryValidationPassword.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
+<link href="/js/SpryValidationPassword.css" rel="stylesheet" type="text/css">
+<link href="/css/jquery-ui.css" rel="stylesheet">
+
 
 
 <!-- JS -->
+
 <script src="/js/SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
 <script src="/js/SpryValidationPassword.js" type="text/javascript"></script>
-<script src="/js/jquery-1.9.1.js"></script>
-<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="/js/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="/js/jquery-ui.js" type="text/javascript"></script>
  
-<script>
-$(function() {
+		<script>
+  $(function() {
     $( document ).tooltip();
   });
   </script>
+  
   <style>
   label {
     display: inline-block;

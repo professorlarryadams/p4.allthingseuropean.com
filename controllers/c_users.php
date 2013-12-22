@@ -187,7 +187,20 @@
     	echo $this->template;
     } 
 	
-	
+	/*-------------------------------------------------------------------------------------------------
+        Display a form so users can sign up        
+        -------------------------------------------------------------------------------------------------*/
+    	
+		public function contact() {
+        
+        #Set up the view
+        $this->template->content = View::instance('v_users_contact');
+        $this->template->title = "Sign Up";
+        
+        # Render the view (localhost/users/signup)
+        echo $this->template;
+    	}		
+    
 	
 } # end of class 
 
