@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 16, 2013 at 02:36 PM
+-- Generation Time: Dec 21, 2013 at 10:12 PM
 -- Server version: 5.1.70-cll
 -- PHP Version: 5.3.17
 
@@ -39,15 +39,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(255) NOT NULL,
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='users table' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='users table' AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `created`, `modified`, `token`, `password`, `last_login`, `timezone`, `first_name`, `last_name`, `email`) VALUES
-(1, 1387136628, 1387136628, 'f13e4978f1ca3945af5e4f22dcd407f22cf51d6a', '1f710d460043c0777db36d837cb698d5d55a6e57', 0, '', 'Larry', 'Adams', 'ladams@aol.com'),
-(2, 1387140256, 1387140256, '6a470eaa2e5d6e0d60f55ab542df050db63f7a2d', '1f710d460043c0777db36d837cb698d5d55a6e57', 0, '', 'Barb', 'Adams', 'badams@aol.com');
+(3, 1387600689, 1387600689, 'c33a36875896c3b82a75595c48fb2b2781d99100', '1f710d460043c0777db36d837cb698d5d55a6e57', 0, '', 'Larry', 'Adams', 'ladams@aol.com');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -21,6 +21,7 @@ if(isset($_POST['submit'])){
 <br />
 
 <!DOCTYPE html>
+
 <head>
 <meta charset="UTF-8">
 <title>Contact Form</title>
@@ -33,8 +34,16 @@ if(isset($_POST['submit'])){
 <script src="/js/SpryValidationTextField.js" type="text/javascript"></script>
 <script src="/js/SpryValidationTextarea.js" type="text/javascript"></script>
 
+	<script>
+  $(function() {
+    $( document ).tooltip();
+  });
+  </script>
+
 </head>
+
 <body>
+
 <br />
 <div class="centered red">
 			<?php if($user): ?>
@@ -72,9 +81,9 @@ if(isset($_POST['submit'])){
 
 <span id="sprytextarea2">
 <label for="message">Message:</label>
-</span></strong><span id="sprytextarea2"><br />
+</span></strong><br />
 <textarea name="message" id="message" cols="45" rows="5"></textarea><br />
-<span class="textareaRequiredMsg">A value is required.</span></span>
+<span class="textareaRequiredMsg">A value is required.</span>
 <input type="submit" name="submit" value="Submit">
 
 </form>

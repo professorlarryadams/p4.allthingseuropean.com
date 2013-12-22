@@ -1,14 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.6
+-- version 4.0.8
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 21, 2013 at 05:15 AM
--- Server version: 5.5.33
--- PHP Version: 5.5.3
+-- Generation Time: Dec 21, 2013 at 10:15 PM
+-- Server version: 5.1.70-cll
+-- PHP Version: 5.3.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `allthin1_p4_allthingseuropean_com`
@@ -17,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `719b`
+-- Table structure for table `719B`
 --
 
-CREATE TABLE `719B` (
+CREATE TABLE IF NOT EXISTS `719B` (
   `719b_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `created` int(11) NOT NULL,
@@ -107,21 +113,25 @@ CREATE TABLE `719B` (
   PRIMARY KEY (`719b_id`),
   KEY `users_id` (`user_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='719b' AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COMMENT='719b' AUTO_INCREMENT=9 ;
 
 --
--- Dumping data for table `719b`
+-- Dumping data for table `719B`
 --
 
-INSERT INTO `719b` (`719b_id`, `user_id`, `created`, `fname`, `mname`, `lname`, `suffix`, `alias`, `ssn`, `ref_num`, `arn`, `birthDate`, `nationality`, `birthCity`, `birthState`, `birthCountry`, `eyes`, `hair`, `address`, `city`, `state`, `zip`, `del_street`, `del_city`, `del_state`, `del_zip`, `phone`, `phone_secondary`, `email`, `POC`, `street`, `city_emerg`, `state_emerg`, `zip_emerg`, `relationship`, `emerg_phone`, `cell_phone`, `emerg_email`, `original_officer`, `renewal_officer`, `duplicate_officer`, `raise_officer`, `increase_officer`, `continuity_officer`, `original_qr`, `renewal_qr`, `duplicate_qr`, `raise_qr`, `increase_qr`, `continuity_qr`, `original_entry`, `renewal_entry`, `duplicate_entry`, `original_stcw`, `renewal_stcw`, `duplicate_stcw`, `raise_stcw`, `increase_stcw`, `description`, `renewal_transaction`, `twic_receipt`, `twic_exempt`, `mos_yes`, `mos_no`, `drugs`, `convictions_statement`, `ndr_authorize`, `continuity`, `parental_consent`, `sse_authorize`, `3rdPartyName`, `medical_authorize`, `3rdPartyPOC`, `pq_authorize`, `3rdPartyStreet`, `3rdPartyCity`, `3rdPartyState`, `3rdPartyZip`, `processing_authorize`, `3rdPartyPhone`, `delivery_authorize`, `oath`, `e_signature`) VALUES
-(7, 10, 1387429180, 'Larry', 'Lee', 'Adams', 'II', '', '128-18-2828', 82828, 0, '02/09/1964', 'United States', 'Winchester', 'VA', 'United States', 'blue', 'bald', '235 Nightingale Ave', 'Stephens City', 'VA', 22727, '', '', '', '', '(828) 282-8288', '(828) 282-8282', 'ladams@aol.com', 'Barbara Adams', '118 Oliver Ct', 'Purcellville', 'VA', '72727', 'wife', '(727) 272-7277', '(727) 272-7277', 'badams@aol.com', 'yes', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'yes', '', '', '', '', 'I would like to apply for Master of Towing desil 1600 tons', '', 'yes', '', 'yes', '', 'no', '', 'yes', '', '', '', 'NMC', 'yes', 'Jeff', 'yes', '100 Forbes Dr', 'Martinsburg', 'WV', '72727', 'yes', '(727) 272-7272', 'yes', 'yes', 0x706879697363616c2077656c6c6e6573732e706466);
+INSERT INTO `719B` (`719b_id`, `user_id`, `created`, `fname`, `mname`, `lname`, `suffix`, `alias`, `ssn`, `ref_num`, `arn`, `birthDate`, `nationality`, `birthCity`, `birthState`, `birthCountry`, `eyes`, `hair`, `address`, `city`, `state`, `zip`, `del_street`, `del_city`, `del_state`, `del_zip`, `phone`, `phone_secondary`, `email`, `POC`, `street`, `city_emerg`, `state_emerg`, `zip_emerg`, `relationship`, `emerg_phone`, `cell_phone`, `emerg_email`, `original_officer`, `renewal_officer`, `duplicate_officer`, `raise_officer`, `increase_officer`, `continuity_officer`, `original_qr`, `renewal_qr`, `duplicate_qr`, `raise_qr`, `increase_qr`, `continuity_qr`, `original_entry`, `renewal_entry`, `duplicate_entry`, `original_stcw`, `renewal_stcw`, `duplicate_stcw`, `raise_stcw`, `increase_stcw`, `description`, `renewal_transaction`, `twic_receipt`, `twic_exempt`, `mos_yes`, `mos_no`, `drugs`, `convictions_statement`, `ndr_authorize`, `continuity`, `parental_consent`, `sse_authorize`, `3rdPartyName`, `medical_authorize`, `3rdPartyPOC`, `pq_authorize`, `3rdPartyStreet`, `3rdPartyCity`, `3rdPartyState`, `3rdPartyZip`, `processing_authorize`, `3rdPartyPhone`, `delivery_authorize`, `oath`, `e_signature`) VALUES
+(8, 3, 1387600979, 'Larry', 'Lee', 'Adams', 'II', '', '727-27-2889', 992929, 9292929, '02/01/1964', 'United States', 'Winchester', 'VA', 'United States', 'blue', 'bald', '235 East St', 'Stephens City', 'VA', 28282, 'P. O. Box 99288', 'Winchester', 'VA', '72727', '(828) 282-8282', '(822) 829-2929', 'ladams@aol.com', 'Barbara Adams', '118 West St', 'Purcellville', 'VA', '72727', 'wife', '(727) 272-7278', '(727) 272-7272', 'badams@aol.com', 'yes', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'yes', '', '', '', '', 'I would like to apply as a Master of Towing 1600 tons Ocean side.  I have 20 years of experience.', '', 'yes', '', 'yes', '', 'no', '', 'yes', '', '', 'yes', 'NMC', 'yes', 'John Hall', 'yes', '100 Forbes Dr', 'Martinsburg', 'WV', '62626', '', '(727) 282-9292', 'yes', 'yes', 0x706879697363616c2077656c6c6e6573732e706466);
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `719b`
+-- Constraints for table `719B`
 --
-ALTER TABLE `719b`
-  ADD CONSTRAINT `719b_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `719B`
+  ADD CONSTRAINT `719B_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

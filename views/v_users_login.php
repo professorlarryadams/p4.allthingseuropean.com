@@ -9,7 +9,7 @@
 <link href="/css/main.css" rel="stylesheet" type="text/css">
 <link href="/js/SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
 <link href="/js/SpryValidationPassword.css" rel="stylesheet" type="text/css">
-<link href="/css/jquery-ui.css" rel="stylesheet">
+<link href="/css/jquery-ui.css" rel="stylesheet" type="text/css">
 
 
 

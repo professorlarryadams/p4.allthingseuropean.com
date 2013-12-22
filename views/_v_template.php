@@ -14,7 +14,13 @@
         
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
         <script src="/js/jquery-1.9.1.js"></script>
-        <script src="/js/jquery-ui.js"></script>  
+        <script src="/js/jquery-ui.js"></script> 
+        
+        	<script>
+  $(function() {
+    $( document ).tooltip();
+  });
+  </script> 
                            
                                                                                 
         <!-- Controller Specific JS/CSS -->
